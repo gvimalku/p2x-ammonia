@@ -1,0 +1,664 @@
+================================================================================
+S1. Inputs  (col A label | col B formula & cached value)   rows 4..191
+================================================================================
+  B4   | Location                                       | f='Fitzroy, QLD'  v='Fitzroy, QLD'
+  B5   | Power Plant Configuration                      | f='C3. Standalone Hybrid Generator'  v='C3. Standalone Hybrid Generator'
+  B6   | Balancing Technology                           | f='BT1. Battery'  v='BT1. Battery'
+  B7   | Note: The choices provided for the power plant | f=None  v=None
+  B8   | Note: Once the scope and inputs are ready, ple | f=None  v=None
+  B10  | Parameter                                      | f='Value'  v='Value'
+  B11  | System Sizing                                  | f=None  v=None
+  B12  | Ammonia Plant Capacity                         | f=1000  v=1000
+  B13  | Ammonia Plant Power Demand                     | f='=(B12/8760*1000000)*B30/1000'  v=46.80365296803653
+  B14  | Air Separation Unit Capacity                   | f='=(NH3_Cap*1000/365)*(28.134/34.181)'  v=2255.037946660265
+  B15  | Air Separation Unit Power Demand               | f='=(B14/24)*B31'  v=21.61078032216087
+  B16  | Hydrogen Output                                | f='=((B12*1000/365)*(6.047/34.181))'  v=484.6880807369952
+  B17  | Nominal Electrolyser Capacity                  | f='=(B16/24)*B51*(1+B18)'  v=1832.726805286763
+  B18  | Electrolyser System Oversizing                 | f=0.815  v=0.815
+  B19  | Generator Type                                 | f=<openpyxl.worksheet.formula.ArrayFormula object at 0x1024923c0>  v='Hybrid'
+  B20  | Nominal Solar Farm Capacity                    | f='=IF(B19="Hybrid",((B13+B15+elecCapacity)*(1+B24)*B22),(B13+B15+elecCapacity*(1+B24)))'  v=3011.4077219059054
+  B21  | Nominal Wind Farm Capacity                     | f='=IF(B19="Hybrid",((B13+B15+elecCapacity)*(1+B24)*B23),(B13+B15+elecCapacity*(1+B24)))'  v=1551.3312506787995
+  B22  | Hybrid Generator Split                         | f=0.66  v=0.66
+  B23  |                                                | f='=1-B22'  v=0.33999999999999997
+  B24  | Renewable Energy Plant Oversizing              | f=1.4  v=1.4
+  B25  | Total Nominal Power Plant Capacity             | f=<openpyxl.worksheet.formula.ArrayFormula object at 0x103bf2210>  v=4562.738972584705
+  B26  | Hydrogen Storage Capacity                      | f=500000  v=500000
+  B28  | Ammonia Plant Parameters                       | f=None  v=None
+  B29  | Specific Energy Consumption - SEC              | f=None  v=None
+  B30  | Ammonia Plant SEC                              | f=0.41  v=0.41
+  B31  | Air Separation Unit SEC                        | f=0.23  v=0.23
+  B32  | Ammonia Plant Load Range                       | f=None  v=None
+  B33  | Ammonia Plant Minimum Turndown                 | f=0.33  v=0.33
+  B34  | Other Operational Factors                      | f=None  v=None
+  B35  | Duration of Ammonia Storage                    | f=30  v=30
+  B36  | Ammonia Plant Costs                            | f=None  v=None
+  B37  | Capital Costs                                  | f=None  v=None
+  B38  | Ammonia Synthesis Unit Cost                    | f=378  v=378
+  B39  | Ammonia Storage Cost                           | f=82  v=82
+  B40  | Air Separation Unit Cost                       | f=182  v=182
+  B41  | Installation Costs                             | f=0.1  v=0.1
+  B42  | Land Procurement Costs                         | f=0  v=0
+  B43  | Operating Costs                                | f=None  v=None
+  B44  | Ammonia Synthesis Unit O&M                     | f=0.02  v=0.02
+  B45  | Ammonia Storage O&M                            | f=0.02  v=0.02
+  B46  | Air Separation Unit O&M                        | f=0.02  v=0.02
+  B48  | Electrolyser & Hydrogen Storage Parameters     | f=None  v=None
+  B49  | Electrolyser Type                              | f='PEM'  v='PEM'
+  B50  | Electrolyser Specific Consumption - SEC        | f=None  v=None
+  B51  | SEC At Nominal Load                            | f=50  v=50
+  B52  |                                                | f='=IF(B51>0,1/B51,0)'  v=0.02
+  B53  | SEC vs Load Profile                            | f='Fixed'  v='Fixed'
+  B54  | SEC Correction Factor                          | f=1  v=1
+  B55  | Total System SEC at Nominal Load               | f='=B51/elecEff'  v=50
+  B56  | Electrolyser Load Range                        | f=None  v=None
+  B57  | Electrolyser Maximum Load                      | f=1  v=1
+  B58  | Electrolyser Minimum Load                      | f=0.1  v=0.1
+  B59  | Other Operational Factors                      | f=None  v=None
+  B60  | Stack Replacement Type                         | f='Cumulative hours'  v='Cumulative hours'
+  B61  | Stack Lifetime                                 | f=85000  v=85000
+  B62  | Stack Degradation                              | f=0.01  v=0.01
+  B63  | Maximum Degradataion Before Replacement        | f=0  v=0
+  B64  | Water Requirement of Electrolyser              | f=10  v=10
+  B65  | Minimum Hydrogen Storage                       | f=0.1  v=0.1
+  B66  | Electrolyser Costs                             | f=None  v=None
+  B67  | Electrolyser Capital Costs                     | f=None  v=None
+  B68  | Reference Electrolyser Capacity                | f=1000  v=1000
+  B69  | Reference Electrolyser Purchase Cost           | f=643  v=643
+  B70  | Economies of Scale - Electrolyser Equipment Co | f=None  v=None
+  B71  | Economies of Scale Profile                     | f='Scale Index'  v='Scale Index'
+  B72  | Scale Index                                    | f=0.99  v=0.99
+  B74  | Electrolyser Cost Reduction with Scale         | f=0.1  v=0.1
+  B75  | Reference Fold Increase                        | f=10  v=10
+  B76  | Hydrogen Storage Capital Costs                 | f=None  v=None
+  B77  | Hydrogen Storage Purchase Cost                 | f=459  v=459
+  B78  | Indirect Cost  - Electrolyser Facility Develop | f=None  v=None
+  B79  | Installation Costs                             | f=0.1  v=0.1
+  B80  | Land Procurement Cost                          | f=0  v=0
+  B81  | Electrolyser System Operating Costs            | f=None  v=None
+  B82  | Electrolyser O&M                               | f=0.025  v=0.025
+  B83  | Hydrogen Storage O&M                           | f=0.01  v=0.01
+  B84  | Electrolyser Stack Replacement Costs           | f=0.2  v=0.2
+  B85  | Water Cost                                     | f=20  v=20
+  B87  | Power Plant Parameters                         | f=None  v=None
+  B88  | Solar Degradation                              | f=0.001  v=0.001
+  B89  | Wind Degradation                               | f=0.001  v=0.001
+  B90  | Excess Electricity                             | f='Curtailed'  v='Curtailed'
+  B91  | Power Plant Costs                              | f=None  v=None
+  B92  | Solar Farm Parameters                          | f=None  v=None
+  B93  | Solar Capital Costs                            | f=None  v=None
+  B94  | Reference Capacity of Solar Farm               | f=1000  v=1000
+  B95  | Reference Solar PV Farm Cost                   | f=557  v=557
+  B96  | Economies of Scale Profile - Wind Farm Equipme | f=None  v=None
+  B97  | Economies of Scale Profile                     | f='Scale Index'  v='Scale Index'
+  B98  | Scale Index                                    | f=1  v=1
+  B99  | Solar Farm Cost Reduction with Scale           | f=0  v=0
+  B100 | Reference Fold Increase                        | f=0  v=0
+  B101 | Indirect Costs - Solar Farm Development        | f=None  v=None
+  B102 | Installation Costs                             | f=0.1  v=0.1
+  B103 | Land Procurement Cost                          | f=0  v=0
+  B104 | Solar Farm Operating Costs                     | f=None  v=None
+  B105 | OPEX (Fixed & Variable O&M)                    | f=12330  v=12330
+  B107 | Wind Farm Parameters                           | f=None  v=None
+  B108 | Wind Capital Costs                             | f=None  v=None
+  B109 | Reference Capacity of Wind Farm                | f=1000  v=1000
+  B110 | Reference Wind Farm Cost                       | f=1294  v=1294
+  B111 | Economies of Scale Profile - Wind Farm Equipme | f=None  v=None
+  B112 | Economies of Scale Profile                     | f='Scale Index'  v='Scale Index'
+  B113 | Scale Index                                    | f=1  v=1
+  B114 | Wind Farm Cost Reduction with Scale            | f=0  v=0
+  B115 | Reference Fold Increase                        | f=0  v=0
+  B116 | Indirect Costs - Wind Farm Development         | f=None  v=None
+  B117 | Installation Costs                             | f=0.1  v=0.1
+  B118 | Land Procurement Cost                          | f=0  v=0
+  B119 | Wind Operating Costs                           | f=None  v=None
+  B120 | OPEX (Fixed & Variable O&M)                    | f=18140  v=18140
+  B122 | Transmission Parameters                        | f=None  v=None
+  B123 | Transmission Distance                          | f=25  v=25
+  B124 | Losses                                         | f=3e-05  v=3e-05
+  B125 | Transmission Capital Costs                     | f=None  v=None
+  B126 | Transmission Equipment Cost                    | f=910000  v=910000
+  B127 | Installation Cost                              | f=0.1  v=0.1
+  B128 | Land Procurement Cost                          | f=0  v=0
+  B129 | Transmission Operating Costs                   | f=None  v=None
+  B130 | Annual Transmission Operating Costs            | f=0.01  v=0.01
+  B132 | Grid Connected Systems                         | f=None  v=None
+  B133 | Costs for Grid Connected Systems               | f=None  v=None
+  B134 | Grid Connection Cost                           | f=132  v=132
+  B135 | Cost of Electricity from the Grid              | f=50  v=50
+  B136 | Additional Transmission Charges                | f=10  v=10
+  B137 | Power Purchase Agreement Price                 | f=None  v=None
+  B138 | Principal PPA Cost                             | f=55  v=55
+  B139 | Additional Transmission Charges                | f=10  v=10
+  B140 | Total PPA Cost                                 | f='=SUM(B138:B139)'  v=65
+  B141 | Sale of Excess Electricity to the Grid         | f=None  v=None
+  B142 | Spot Price for Electricity Sold to the Grid    | f=55  v=55
+  B143 | Transmission Charges                           | f=10  v=10
+  B145 | Balancing Technology Parameters                | f=None  v=None
+  B146 | Type                                           | f=<openpyxl.worksheet.formula.ArrayFormula object at 0x102381a90>  v='Battery'
+  B147 | Battery Parameters                             | f=None  v=None
+  B148 | Battery Rated Power                            | f=500  v=500
+  B149 | Duration of Storage                            | f=8  v=8
+  B150 | Nominal Battery Capacity                       | f='=B149*BattPower'  v=4000
+  B151 | Round Trip Efficiency                          | f=0.85  v=0.85
+  B152 | Minimum State of Charge                        | f=0  v=0
+  B153 | Maximum State of Charge                        | f=1  v=1
+  B154 | Battery Lifetime                               | f=15  v=15
+  B155 | Battery Capital Costs                          | f=None  v=None
+  B156 | Cost of Battery                                | f=357  v=357
+  B157 | Installation Costs                             | f=0  v=0
+  B158 | Land Procurement Cost                          | f=0  v=0
+  B159 | Battery Operating Costs                        | f=None  v=None
+  B160 | Battery O&M (Fixed & Variable O&M)             | f=20000  v=20000
+  B161 | Replacement Cost                               | f=1  v=1
+  B163 | Gas Turbine Parameters                         | f=None  v=None
+  B164 | Type                                           | f=<openpyxl.worksheet.formula.ArrayFormula object at 0x1023ebe10>  v='None'
+  B165 | Capacity                                       | f=84  v=84
+  B166 | Efficiency                                     | f=0.569  v=0.569
+  B167 | Turndown                                       | f=0.2  v=0.2
+  B168 | Gas Turbine Capital Costs                      | f=None  v=None
+  B169 | Cost of Gas Turbine                            | f=1188  v=1188
+  B170 | Installation Cost                              | f=0  v=0
+  B171 | Land Procurement Costs                         | f=0  v=0
+  B172 | Gas Turbine Operating Costs                    | f=None  v=None
+  B173 | Fixed Operating Costs                          | f=10.57  v=10.57
+  B174 | Variable Operating Costs                       | f=2.49  v=2.49
+  B176 | Grid Balanced System                           | f=None  v=None
+  B177 | Grid Connection Capacity                       | f=500  v=500
+  B178 | Grid Capital Costs                             | f=None  v=None
+  B179 | Grid Connection Cost                           | f=132  v=132
+  B180 | Grid Operating Costs                           | f=None  v=None
+  B181 | Cost of Electricity                            | f=55  v=55
+  B182 | Grid System Charges                            | f=10  v=10
+  B185 | Additional Costs                               | f=None  v=None
+  B186 | Additional Upfront Costs                       | f=None  v=None
+  B187 | Additional Annual Costs                        | f=None  v=None
+  B189 | Financing Parameters                           | f=None  v=None
+  B190 | Plant Life                                     | f=25  v=25
+  B191 | Discount Rate                                  | f=0.07  v=0.07
+
+================================================================================
+A3. Conversion Factors  (rows 5..27)
+================================================================================
+  B5   | LHV  of H2                               | f=33.33  v=33.33
+  B6   | 1 Nm3                                    | f=0.089  v=0.089
+  B9   | Hydrogen LHV                             | f=119.96  v=119.96
+  B10  | Ammonia LHV                              | f=18.6  v=18.6
+  B15  | Unit Conversions                         | f=None  v=None
+  B16  | 1 GW                                     | f=1000  v=1000
+  B17  | 1 MW                                     | f=1000  v=1000
+  B19  | Power Demand Regions                     | f=None  v=None
+  B20  | Maxium Power                             | f='=NH3_PowDem+N2_PowDem+elecCapacity'  v=1901.1412385769604
+  B21  | Stoichiometric Power                     | f='=B23+B24'  v=1078.1812681589374
+  B22  | Electrolyser Rated Power                 | f='=elecCapacity'  v=1832.726805286763
+  B23  | Electrolyser Soichiometric Power         | f='=B22/(1+ElecOversize)'  v=1009.76683486874
+  B24  | ASU/Ammonia Plant Rated Power            | f='=NH3_PowDem+N2_PowDem'  v=68.4144332901974
+  B25  | Minimum Power                            | f='=B24*MinLoadNH3'  v=22.57676298576514
+  B26  | Stoichiometric Hydrogen Demand           | f=<openpyxl.worksheet.formula.ArrayFormula object at 0x7002eea030>  v=20195.336697374798
+  B27  | Ammonia Plant Design Output              | f='=NH3_Cap*1000000/8760'  v=114155.25114155251
+
+================================================================================
+S5. Working Data  (per column: header row18 | seed row19 | recurrence row20)
+cols B..AZ (2..52). Row 19 = first hour (seed); row 20 = general hour (copied down).
+================================================================================
+
+--- col B | header: 'Local Time'
+    row19: datetime.datetime(2019, 1, 1, 0, 30)
+    row20: datetime.datetime(2019, 1, 1, 1, 30)
+
+--- col C | header: 'Generator Capacity Factor'
+    row19: <openpyxl.worksheet.formula.ArrayFormula object at 0x104e0bef0>
+    row20: <openpyxl.worksheet.formula.ArrayFormula object at 0x1473d8230>
+
+--- col D | header: 'Actual Power Generated After Transmission (MWh)'
+    row19: '=IF(GenType="Grid",Pstoic,(RECap*C19)*1-(Power_Loss*Tran_Dist))'
+    row20: '=IF(GenType="Grid",Pstoic,(RECap*C20)*1-(Power_Loss*Tran_Dist))'
+
+--- col E | header: 'Ordered Generator Capacity Factor (%)'
+    row19: <openpyxl.worksheet.formula.ArrayFormula object at 0x104e0bfb0>
+    row20: 0.95900858
+
+--- col F | header: 'Ordered Electrolyser Capacity Factor (%)'
+    row19: <openpyxl.worksheet.formula.ArrayFormula object at 0x104e0bf50>
+    row20: 1
+
+--- col G | header: 'Ordered NH3 Plant Load (%)'
+    row19: <openpyxl.worksheet.formula.ArrayFormula object at 0x104e0be30>
+    row20: 0.9897561680873979
+
+--- col H | header: '1'
+    row19: '=IF(D19>=Pmax,1,0)'
+    row20: '=IF(D20>=Pmax,1,0)'
+
+--- col I | header: '2'
+    row19: '=IF(AND(D19>=Pstoic,D19<Pmax),1,0)'
+    row20: '=IF(AND(D20>=Pstoic,D20<Pmax),1,0)'
+
+--- col J | header: '3'
+    row19: '=IF(AND(D19>Prated_ASU_HB,D19<Pstoic),1,0)'
+    row20: '=IF(AND(D20>Prated_ASU_HB,D20<Pstoic),1,0)'
+
+--- col K | header: '4'
+    row19: '=IF(AND(D19>Pmin,D19<Prated_ASU_HB),1,0)'
+    row20: '=IF(AND(D20>Pmin,D20<Prated_ASU_HB),1,0)'
+
+--- col L | header: '5'
+    row19: '=IF(Pmin>D19,1,0)'
+    row20: '=IF(Pmin>D20,1,0)'
+
+--- col M | header: 'Electrolyser'
+    row19: <openpyxl.worksheet.formula.ArrayFormula object at 0x1050537d0>
+    row20: <openpyxl.worksheet.formula.ArrayFormula object at 0x1050531d0>
+
+--- col N | header: 'ASU/HB'
+    row19: <openpyxl.worksheet.formula.ArrayFormula object at 0x1054a9130>
+    row20: <openpyxl.worksheet.formula.ArrayFormula object at 0x1473d8110>
+
+--- col O | header: 'Total Power Allocated from RE (MWh)'
+    row19: '=SUM(M19:N19)'
+    row20: '=SUM(M20:N20)'
+
+--- col P | header: 'Excess Power Gen'
+    row19: '=IF(H19=1,(D19)-(Prated_Elec+Prated_ASU_HB),0)'
+    row20: '=IF(H20=1,(D20)-(Prated_Elec+Prated_ASU_HB),0)'
+
+--- col Q | header: 'Deficit Power Gen'
+    row19: '=IF(OR(J19=1,K19=1,L19=1),D19-Pstoic,0)'
+    row20: '=IF(OR(J20=1,K20=1,L20=1),D20-Pstoic,0)'
+
+--- col R | header: 'Battery Charge (MWh)'
+    row19: '=IF(B_Tech="BT1. Battery",IF(P19>0,MIN(BattPower,(D19)-Pmax),0),0)'
+    row20: '=IF(B_Tech="BT1. Battery",IF(AND(P20>0,V19<>BattMax),MIN(BattPower,(D20)-Pmax,(BattMax-V19)*BattCap),0),0)'
+
+--- col S | header: 'Battery Discharge to ASU/NH3 (MWh)'
+    row19: '=IF(B_Tech="BT1. Battery",IF(Q19<0,0,0),0)'
+    row20: <openpyxl.worksheet.formula.ArrayFormula object at 0x105053230>
+
+--- col T | header: 'Battery Discharge to Electrolyser (MWh)'
+    row19: '=IF(Q19<0,0,0)'
+    row20: <openpyxl.worksheet.formula.ArrayFormula object at 0x105053290>
+
+--- col U | header: 'Total Discharged (MWh)'
+    row19: '=ABS(S19+T19)'
+    row20: '=ABS(S20+T20)'
+
+--- col V | header: 'Battery SOC%'
+    row19: '=BattMin'
+    row20: '=IF(AND(V19=1,S20=0,T20=0),V19,V19+(R20+S20+T20)/BattCap)'
+
+--- col W | header: 'GT Discharge to System (MWh)'
+    row19: '=IF(ISNUMBER(SEARCH("Gas Turbine",B_Tech)),GT_TD*GT_Cap,0)'
+    row20: <openpyxl.worksheet.formula.ArrayFormula object at 0x1473d94f0>
+
+--- col X | header: 'Discharge to ASU/NH3 (MWh)'
+    row19: '=IF(W19>0,MIN(GT_Cap,Prated_ASU_HB-N19,Prated_ASU_HB),0)'
+    row20: '=IF(W20>0,MIN(GT_Cap,Prated_ASU_HB-N20,Prated_ASU_HB),0)'
+
+--- col Y | header: 'Discharge to Electrolyser (MWh)'
+    row19: '=IF(AND(W19>0,ISNUMBER(SEARCH("Gas Turbine",B_Tech))),IF(W19>(GT_TD*GT_Cap),(W19-X19),GT_TD*GT_Cap),0)'
+    row20: '=IF(AND(W20>0,ISNUMBER(SEARCH("Gas Turbine",B_Tech))),IF(W20>(GT_TD*GT_Cap),(W20-X20),GT_TD*GT_Cap),0)'
+
+--- col Z | header: 'Fuel from storage (kg)'
+    row19: <openpyxl.worksheet.formula.ArrayFormula object at 0x105052ed0>
+    row20: <openpyxl.worksheet.formula.ArrayFormula object at 0x105053350>
+
+--- col AA | header: 'Gas Turbine Load (%)'
+    row19: '=IF(GT_Cap>0,W19/GT_Cap,0)'
+    row20: '=IF(GT_Cap>0,W20/GT_Cap,0)'
+
+--- col AB | header: 'Grid To ASU/HB'
+    row19: '=IF(B_Tech="BT6. Grid Balanced System",IF(N19<Prated_ASU_HB,MIN(Prated_ASU_HB-N19,\'S1. Inputs\'!$B$177),0),0)'
+    row20: '=IF(B_Tech="BT6. Grid Balanced System",IF(N20<Prated_ASU_HB,MIN(Prated_ASU_HB-N20,\'S1. Inputs\'!$B$177),0),0)'
+
+--- col AC | header: 'Grid To Electrolyser'
+    row19: '=IF(B_Tech="BT6. Grid Balanced System",IF(M19<Prated_Elec,MIN(Prated_Elec-M19,\'S1. Inputs\'!$B$177-AB19),0),0)'
+    row20: '=IF(B_Tech="BT6. Grid Balanced System",IF(M20<Prated_Elec,MIN(Prated_Elec-M20,\'S1. Inputs\'!$B$177-AB20),0),0)'
+
+--- col AD | header: 'Electrolyser P with BT (MWh)'
+    row19: '=IF(M19+Y19+AC19+IF(T19<0,(-1*T19*(1-(1-BattEff)/2)))>=(ElecMinLoad*Prated_Elec),MIN(M19+Y19+AC19+IF(T19<0,(-1*T19*(1-(1-BattEff)/2))),Prated_Elec),0)'
+    row20: '=IF(M20+Y20+AC20+IF(T20<0,(-1*T20*(1-(1-BattEff)/2)))>=(ElecMinLoad*Prated_Elec),MIN(M20+Y20+AC20+IF(T20<0,(-1*T20*(1-(1-BattEff)/2))),Prated_Elec),0)'
+
+--- col AE | header: 'Electrolyser CF'
+    row19: '=AD19/Prated_Elec'
+    row20: '=AD20/Prated_Elec'
+
+--- col AF | header: 'Total H2 Production (kg)'
+    row19: <openpyxl.worksheet.formula.ArrayFormula object at 0x105053050>
+    row20: <openpyxl.worksheet.formula.ArrayFormula object at 0x105053410>
+
+--- col AG | header: 'NH3 Unit Demand'
+    row19: '=IF(AN19=Prated_ASU_HB,H2Stoic,(AN19/(Prated_ASU_HB))*H2Stoic)'
+    row20: '=IF(AN20=Prated_ASU_HB,H2Stoic,(AN20/(Prated_ASU_HB))*H2Stoic)'
+
+--- col AH | header: 'Excess H2 (kg)'
+    row19: '=IF(AF19>AG19,AF19-AG19,0)'
+    row20: <openpyxl.worksheet.formula.ArrayFormula object at 0x105053470>
+
+--- col AI | header: 'Deficit H2 (kg)'
+    row19: <openpyxl.worksheet.formula.ArrayFormula object at 0x1050530b0>
+    row20: <openpyxl.worksheet.formula.ArrayFormula object at 0x105053590>
+
+--- col AJ | header: 'H2 to Storage (kg)'
+    row19: 0
+    row20: '=IF(AND(AL19<H2Stor_Cap,(AH20/H2Stor_Cap)<=1-AM19),H2Stor_Cap-(H2Stor_Cap-AH20),0)'
+
+--- col AK | header: 'H2 From Storage (kg)'
+    row19: <openpyxl.worksheet.formula.ArrayFormula object at 0x105053110>
+    row20: <openpyxl.worksheet.formula.ArrayFormula object at 0x105053650>
+
+--- col AL | header: 'H2 in Storage (kg)'
+    row19: '=H2Stor_Cap+(AJ19+AK19)-IF(ISNUMBER(SEARCH("Hydrogen",\'S1. Inputs\'!$B$164)), Z19,0)'
+    row20: '=(AL19+(AJ20+AK20))-IF(ISNUMBER(SEARCH("Hydrogen",\'S1. Inputs\'!$B$164)), Z20,0)'
+
+--- col AM | header: 'H2 Storage  % Full'
+    row19: '=IF(AL19>0,AL19/H2Stor_Cap,0)'
+    row20: '=AL20/H2Stor_Cap'
+
+--- col AN | header: 'ASU/NH3 Power BT (MWh)'
+    row19: '=N19+X19+AB19+IF(S19<0,(-1*S19*(1-(1-BattEff)/2)))'
+    row20: '=N20+X20+AB20+IF(S20<0,(-1*S20*(1-(1-BattEff)/2)))'
+
+--- col AO | header: 'H2 Feed to NH3 Unit (kg)'
+    row19: <openpyxl.worksheet.formula.ArrayFormula object at 0x105053170>
+    row20: <openpyxl.worksheet.formula.ArrayFormula object at 0x103d25130>
+
+--- col AP | header: 'ASU/NH3 Plant Load'
+    row19: '=AO19/H2Stoic'
+    row20: '=AO20/H2Stoic'
+
+--- col AQ | header: 'N2 Production (kg)'
+    row19: '=IF(AP19>=MinLoadNH3,((AO19/2)/3.01)*28,0)'
+    row20: '=IF(AP20>=MinLoadNH3,((AO20/2)/3.01)*28,0)'
+
+--- col AR | header: 'NH3 Production (kg)'
+    row19: '=IF(AP19>=MinLoadNH3,(AO19+AQ19)*0.99,0)'
+    row20: '=IF(AP20>=MinLoadNH3,(AO20+AQ20)*0.99,0)'
+
+--- col AS | header: 'NH3 Plant Load (%)'
+    row19: '=AR19/NH3Cap'
+    row20: '=AR20/NH3Cap'
+
+--- col AT | header: 'Cumulative NH3 production (T)'
+    row19: '=AR19/1000'
+    row20: '=(AT19+(AR20/1000))-IF(ISNUMBER(SEARCH("Ammonia",\'S1. Inputs\'!$B$164)),Z20/1000,0)'
+
+--- col AU | header: 'Excess Power (MWh)'
+    row19: '=(D19+W19+AB19+AC19)-(R19+AD19+AN19)'
+    row20: '=(D20+W20+AB20+AC20)-(R20+AD20+AN20)'
+
+--- col AV | header: 'Excess H2 Produced (kg)'
+    row19: '=(AF19-(AJ19+AO19+AK19))/1000'
+    row20: '=(AF20-(AJ20+AO20+AK20))/1000'
+
+--- col AW | header: 'Cumalitive Excess'
+    row19: '=AV19'
+    row20: '=AV20+AW19'
+
+--- col AX | header: 'ASU/NH3 Outage'
+    row19: '=IF(AS19=0,1,0)'
+    row20: '=IF(AS20=0,1,0)'
+
+--- col AY | header: 'Total Power Allocated'
+    row19: '=(AN19+AD19)/RECap'
+    row20: '=(AN20+AD20)/RECap'
+
+--- col AZ | header: 'Total Power Allocated'
+    row19: '=(AN19+AD19)'
+    row20: '=(AN20+AD20)'
+
+================================================================================
+S5 summary band (rows 11=avg,12=total,13=min,14=max) key cols
+================================================================================
+  col C: 11='=AVERAGE(C19:C8778)' | 12=None | 13=None | 14=None
+  col D: 11=None | 12='=SUM(D19:D8778)' | 13=None | 14=None
+  col E: 11='=AVERAGE(_xlfn.ANCHORARRAY(E19))' | 12=None | 13=None | 14=None
+  col F: 11='=AVERAGE(_xlfn.ANCHORARRAY(F19))' | 12=None | 13=None | 14=None
+  col G: 11='=AVERAGE(_xlfn.ANCHORARRAY(G19))' | 12=None | 13=None | 14=None
+  col M: 11=None | 12='=SUM(M19:M8778)' | 13=None | 14=None
+  col N: 11=None | 12='=SUM(N19:N8778)' | 13=None | 14=None
+  col R: 11=None | 12='=SUM(R19:R8778)' | 13=None | 14=None
+  col V: 11='=COUNTIF(V19:V8778,">"&BattMin)/8760' | 12=None | 13=None | 14=None
+  col AD: 11=None | 12='=SUM(AD19:AD8778)' | 13=None | 14=None
+  col AE: 11='=AVERAGE(AE19:AE8778)' | 12='=COUNTIF(AE19:AE8778,">0")' | 13=None | 14=None
+  col AF: 11=None | 12='=SUM(AF19:AF8778)/1000' | 13=None | 14=None
+  col AP: 11='=AVERAGE(AP19:AP8778)' | 12=None | 13=None | 14=None
+  col AQ: 11=None | 12='=SUM(AQ19:AQ8778)/1000' | 13=None | 14=None
+  col AR: 11=None | 12='=SUM(AR19:AR8778)/1000' | 13=None | 14=None
+  col AS: 11='=AVERAGE(AS19:AS8778)' | 12='=COUNTIF(AS19:AS8778,">0.30")' | 13=None | 14='=COUNTIF(AS19:AS8778,">=0.90")/8760'
+  col AU: 11=None | 12='=SUM(AU19:AU8778)' | 13=None | 14='=MAX(AU19:AU8778)'
+
+================================================================================
+S3 schedule anchors: row48 (yr0 CAPEX), row49 (yr1), row92 (disc yr0), 129/130 (LCOA)
+cols F..AE (6..31)
+================================================================================
+
+-- S3 row 47 --
+    F47: 'Power Plant CAPEX (A$)'
+    G47: 'Grid Connection CAPEX (A$)'
+    H47: 'Transmission CAPEX (A$)'
+    I47: 'Balance Tech CAPEX'
+    J47: 'Electrolyser CAPEX (A$)'
+    K47: 'H2 Storage CAPEX (A$)'
+    L47: 'Indirect Costs'
+    M47: 'Ammonia Plant CAPEX (A$)'
+    N47: 'ASU Plant CAPEX (A$)'
+    O47: 'Power Plant OPEX (A$)'
+    P47: 'Grid OPEX (A$)'
+    Q47: 'PPA OPEX (A$)'
+    R47: 'Transmission OPEX (A$)'
+    S47: 'Balance Tech OPEX (A$)'
+    T47: 'Electrolyser OPEX (A$)'
+    U47: 'Stack Replacement (A$)'
+    V47: 'Battery Replacement (A$)'
+    W47: 'Water Cost Wholesale (A$)'
+    X47: 'H2 Storage OPEX (A$)'
+    Y47: 'Ammonia Plant OPEX (A$)'
+    Z47: 'ASU Plant OPEX (A$)'
+    AA47: 'Additonal Costs (A$)'
+    AB47: 'Electricity Sales (A$)'
+    AC47: 'Total (A$)'
+
+-- S3 row 48 --
+    F48: '=PP_CAPEX'
+    G48: '=B52'
+    H48: '=B66'
+    I48: <openpyxl.worksheet.formula.ArrayFormula object at 0x104f01010>
+    J48: '=Elec_CAPEX'
+    K48: '=H2_Storage_CAPEX'
+    L48: '=B72+B83+B95+B119+B128+B146'
+    M48: '=Ammonia_CAPEX'
+    N48: '=ASU_CAPEX'
+    O48: 0
+    P48: 0
+    Q48: 0
+    R48: 0
+    S48: 0
+    T48: 0
+    U48: 0
+    V48: 0
+    W48: 0
+    X48: 0
+    Y48: 0
+    Z48: 0
+    AA48: '=B154'
+    AB48: 0
+    AC48: '=SUM(F48:Z48)'
+
+-- S3 row 49 --
+    O49: '=IF(E49<=Plant_Life,PP_OPEX,"")'
+    P49: <openpyxl.worksheet.formula.ArrayFormula object at 0x104f01070>
+    Q49: <openpyxl.worksheet.formula.ArrayFormula object at 0x104f010d0>
+    R49: '=IF(E49<=Plant_Life,$B$69,"")'
+    S49: <openpyxl.worksheet.formula.ArrayFormula object at 0x104f01190>
+    T49: '=IF(E49<=Plant_Life,$B$123,"")'
+    U49: '=IF(E49<=Plant_Life,IF(OR(AND(Elec_DegRate>0,N9=0,SUM($N$9:$N$43)>0),_xlfn.FLOOR.MATH(Q9)-_xlfn.FLOOR.MATH(Q8)=1),\'S3. Levelised Cost Analysis\'!$B$122,0),"")'
+    V49: '=IF(F49<=Plant_Life,IF(R9=0,$B$88,0),"")'
+    W49: '=IF(E49<=Plant_Life,G9*1000*$B$132*$B$133/1000,"")'
+    X49: '=IF(E49<=Plant_Life,$B$130,"")'
+    Y49: '=IF(E49<=Plant_Life,$B$150+$B$151,"")'
+    Z49: '=IF(E49<=Plant_Life,$B$152,"")'
+    AA49: '=IF(E49<=Plant_Life,$B$155,"")'
+    AB49: '=IF(E49<=Plant_Life,-$B$59*L9,"")'
+    AC49: '=IF(E49<=Plant_Life,SUM(F49:AB49),"")'
+
+-- S3 row 91 --
+    F91: 'Hydrogen Produced (kg)'
+    G91: 'Ammonia Produced (kg)'
+    H91: 'Power Plant CAPEX (A$)'
+    I91: 'Grid Connection CAPEX (A$)'
+    J91: 'Transmission CAPEX (A$)'
+    K91: 'Balance Tech CAPEX (A$)'
+    L91: 'Electrolyser CAPEX (A$)'
+    M91: 'H2 Storage CAPEX (A$)'
+    N91: 'Indirect Costs'
+    O91: 'Ammonia Plant CAPEX (A$)'
+    P91: 'ASU Plant CAPEX (A$)'
+    Q91: 'Power Plant OPEX (A$)'
+    R91: 'Grid OPEX (A$)'
+    S91: 'PPA OPEX (A$)'
+    T91: 'Transmission OPEX (A$)'
+    U91: 'Balance Tech OPEX (A$)'
+    V91: 'Electrolyser OPEX (A$)'
+    W91: 'Stack Replacement (A$)'
+    X91: 'Battery Replacement (A$)'
+    Y91: 'Water Cost Wholesale (A$)'
+    Z91: 'H2 Storage OPEX (A$)'
+    AA91: 'Ammonia Plant OPEX (A$)'
+    AB91: 'ASU Plant OPEX (A$)'
+    AC91: 'Additional Costs (A$)'
+    AD91: 'Electricity Sales (A$)'
+    AE91: 'Total (A$)'
+
+-- S3 row 92 --
+    F92: 0
+    G92: 0
+    H92: '=F48'
+    I92: '=G48'
+    J92: '=H48'
+    K92: '=I48'
+    L92: '=J48'
+    M92: '=K48'
+    N92: '=L48'
+    O92: '=M48'
+    P92: '=N48'
+    Q92: '=O48'
+    R92: '=P48'
+    T92: '=R48'
+    U92: '=S48'
+    V92: '=T48'
+    W92: '=U48'
+    X92: '=V48'
+    Y92: '=W48'
+    Z92: '=X48'
+    AA92: '=Y48'
+    AB92: '=Z48'
+    AC92: '=AA48'
+    AD92: '=AB48'
+    AE92: '=AC48'
+
+-- S3 row 93 --
+    F93: '=IF(E93<=Plant_Life,G9*1000/(1+Discount_Rate)^$E93,"")'
+    G93: '=IF(E93<=Plant_Life,I9*1000/(1+Discount_Rate)^$E93,"")'
+    H93: '=IF($E93<=Plant_Life,F49/(1+Discount_Rate)^$E93,"")'
+    I93: '=IF($E93<=Plant_Life,G49/(1+Discount_Rate)^$E93,"")'
+    J93: '=IF($E93<=Plant_Life,H49/(1+Discount_Rate)^$E93,"")'
+    K93: '=IF($E93<=Plant_Life,I49/(1+Discount_Rate)^$E93,"")'
+    L93: '=IF($E93<=Plant_Life,J49/(1+Discount_Rate)^$E93,"")'
+    M93: '=IF($E93<=Plant_Life,K49/(1+Discount_Rate)^$E93,"")'
+    N93: '=IF($E93<=Plant_Life,L49/(1+Discount_Rate)^$E93,"")'
+    O93: '=IF($E93<=Plant_Life,M49/(1+Discount_Rate)^$E93,"")'
+    P93: '=IF($E93<=Plant_Life,N49/(1+Discount_Rate)^$E93,"")'
+    Q93: '=IF($E93<=Plant_Life,O49/(1+Discount_Rate)^$E93,"")'
+    R93: '=IF($E93<=Plant_Life,P49/(1+Discount_Rate)^$E93,"")'
+    S93: '=IF($E93<=Plant_Life,Q49/(1+Discount_Rate)^$E93,"")'
+    T93: '=IF($E93<=Plant_Life,R49/(1+Discount_Rate)^$E93,"")'
+    U93: '=IF($E93<=Plant_Life,S49/(1+Discount_Rate)^$E93,"")'
+    V93: '=IF($E93<=Plant_Life,T49/(1+Discount_Rate)^$E93,"")'
+    W93: '=IF($E93<=Plant_Life,U49/(1+Discount_Rate)^$E93,"")'
+    X93: '=IF($E93<=Plant_Life,V49/(1+Discount_Rate)^$E93,"")'
+    Y93: '=IF($E93<=Plant_Life,W49/(1+Discount_Rate)^$E93,"")'
+    Z93: '=IF($E93<=Plant_Life,X49/(1+Discount_Rate)^$E93,"")'
+    AA93: '=IF($E93<=Plant_Life,Y49/(1+Discount_Rate)^$E93,"")'
+    AB93: '=IF($E93<=Plant_Life,Z49/(1+Discount_Rate)^$E93,"")'
+    AC93: '=IF($E93<=Plant_Life,AA49/(1+Discount_Rate)^$E93,"")'
+    AD93: '=IF($E93<=Plant_Life,AB49/(1+Discount_Rate)^$E93,"")'
+    AE93: '=IF($E93<=Plant_Life,AC49/(1+Discount_Rate)^$E93,"")'
+
+-- S3 row 128 --
+    F128: '=SUM(F93:F127)'
+    G128: '=SUM(G93:G127)'
+    H128: '=SUM(H92:H127)'
+    I128: '=SUM(I92:I127)'
+    J128: '=SUM(J92:J127)'
+    K128: '=SUM(K92:K127)'
+    L128: '=SUM(L92:L127)'
+    M128: '=SUM(M92:M127)'
+    N128: '=SUM(N92:N127)'
+    O128: '=SUM(O92:O127)'
+    P128: '=SUM(P92:P127)'
+    Q128: '=SUM(Q92:Q127)'
+    R128: '=SUM(R92:R127)'
+    S128: '=SUM(S92:S127)'
+    T128: '=SUM(T92:T127)'
+    U128: '=SUM(U92:U127)'
+    V128: '=SUM(V92:V127)'
+    W128: '=SUM(W92:W127)'
+    X128: '=SUM(X92:X127)'
+    Y128: '=SUM(Y92:Y127)'
+    Z128: '=SUM(Z92:Z127)'
+    AA128: '=SUM(AA92:AA127)'
+    AB128: '=SUM(AB92:AB127)'
+    AC128: '=SUM(AC92:AC127)'
+    AD128: '=SUM(AD92:AD127)'
+    AE128: '=SUM(AE92:AE127)'
+
+-- S3 row 129 --
+    H129: '=H128/$F$128'
+    I129: '=I128/$F$128'
+    J129: '=J128/$F$128'
+    K129: '=K128/$F$128'
+    L129: '=L128/$F$128'
+    M129: '=M128/$F$128'
+    N129: '=N128/$F$128'
+    O129: '=O128/$F$128'
+    P129: '=P128/$F$128'
+    Q129: '=Q128/$F$128'
+    R129: '=R128/$F$128'
+    S129: '=S128/$F$128'
+    T129: '=T128/$F$128'
+    U129: '=U128/$F$128'
+    V129: '=V128/$F$128'
+    W129: '=W128/$F$128'
+    X129: '=X128/$F$128'
+    Y129: '=Y128/$F$128'
+    Z129: '=Z128/$F$128'
+    AA129: '=AA128/$F$128'
+    AB129: '=AB128/$F$128'
+    AC129: '=AC128/$F$128'
+    AD129: '=AD128/$F$128'
+    AE129: '=SUM(H129:AD129)'
+
+-- S3 row 130 --
+    H130: '=H128/$G$128'
+    I130: '=I128/$G$128'
+    J130: '=J128/$G$128'
+    K130: '=K128/$G$128'
+    L130: '=L128/$G$128'
+    M130: '=M128/$G$128'
+    N130: '=N128/$G$128'
+    O130: '=O128/$G$128'
+    P130: '=P128/$G$128'
+    Q130: '=Q128/$G$128'
+    R130: '=R128/$G$128'
+    S130: '=S128/$G$128'
+    T130: '=T128/$G$128'
+    U130: '=U128/$G$128'
+    V130: '=V128/$G$128'
+    W130: '=W128/$G$128'
+    X130: '=X128/$G$128'
+    Y130: '=Y128/$G$128'
+    Z130: '=Z128/$G$128'
+    AA130: '=AA128/$G$128'
+    AB130: '=AB128/$G$128'
+    AC130: '=AC128/$G$128'
+    AD130: '=AD128/$G$128'
+    AE130: '=SUM(H130:AD130)'

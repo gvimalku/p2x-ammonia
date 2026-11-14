@@ -22,18 +22,25 @@ mw_to_kw:
   value: 1000
   unit: kW/MW
 stoichiometry:
-  _note: Parameterised for review. Masses per tonne of NH3 produced.
+  _note: Parameterised for review. Molar basis per 34.181 units NH3 -> 6.047 H2 + 28.134
+    N2 (from the S1 sizing formulas). Ratios computed from these, not rounded.
   nh3_molar_basis:
     value: 34.181
     unit: mass units
+  h2_molar_basis:
+    value: 6.047
+    unit: mass units
+    review: true
+  n2_molar_basis:
+    value: 28.134
+    unit: mass units
+    review: true
   h2_kg_per_t_nh3:
     value: 176.9111
-    unit: kgH2/tNH3
-    review: true
+    unit: kgH2/tNH3 (derived = 1000*h2_molar/nh3_molar)
   n2_kg_per_t_nh3:
     value: 823.0889
-    unit: kgN2/tNH3
-    review: true
+    unit: kgN2/tNH3 (derived = 1000*n2_molar/nh3_molar)
   nh3_conversion_efficiency:
     value: 0.99
     unit: fraction

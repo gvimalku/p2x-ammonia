@@ -1,0 +1,354 @@
+================================================================================
+DEFINED NAMES -> destination
+================================================================================
+  ASU_CAPEX                    -> S3. Levelised Cost Analysis!$B$145
+  ASU_OPEX                     -> S3. Levelised Cost Analysis!$B$152
+  Ammonia_CAPEX                -> S3. Levelised Cost Analysis!$B$144
+  Ammonia_CFVis                -> (formula) OFFSET('S5. Working Data'!$AS$19,'A2.Ranges'!$I$52*24,0,'S2. Results'!$Z$8*24,1)
+  Ammonia_LHV                  -> A3. Conversion Factors!$B$10
+  Ammonia_OPEX                 -> S3. Levelised Cost Analysis!$B$150
+  B_Tech                       -> S1. Inputs!$B$6
+  BattCap                      -> S1. Inputs!$B$150
+  BattDuration                 -> S1. Inputs!$B$149
+  BattEff                      -> S1. Inputs!$B$151
+  BattMax                      -> S1. Inputs!$B$153
+  BattMin                      -> S1. Inputs!$B$152
+  BattPower                    -> S1. Inputs!$B$148
+  Battery_CAPEX                -> S3. Levelised Cost Analysis!$B$82
+  Battery_OPEX                 -> S3. Levelised Cost Analysis!$B$85
+  Battery_SOCVis               -> (formula) OFFSET('S5. Working Data'!$V$19,'A2.Ranges'!$I$52*24,0,'S2. Results'!$Z$8*24,1)
+  DateVis                      -> (formula) OFFSET('S5. Working Data'!$B$19,'A2.Ranges'!$I$52*24,0,'S2. Results'!$Z$8*24,1)
+  Discount_Rate                -> S1. Inputs!$B$191
+  ElecMinLoad                  -> S1. Inputs!$B$58
+  ElecOversize                 -> S1. Inputs!$B$18
+  Elec_CAPEX                   -> S3. Levelised Cost Analysis!$B$118
+  Elec_DegRate                 -> S1. Inputs!$B$62
+  Elec_StoicP                  -> A3. Conversion Factors!$B$23
+  Elect_CAPEX                  -> S3. Levelised Cost Analysis!$B$118
+  Electrolyser_CFVis           -> (formula) OFFSET('S5. Working Data'!$AE$19,'A2.Ranges'!$I$52*24,0,'S2. Results'!$Z$8*24,1)
+  Electrolyser_OPEX            -> S3. Levelised Cost Analysis!$B$123
+  GT_Cap                       -> S1. Inputs!$B$165
+  GT_Cost                      -> S1. Inputs!$B$169
+  GT_Eff                       -> S1. Inputs!$B$166
+  GT_LoadVis                   -> (formula) OFFSET('S5. Working Data'!$AA$19,'A2.Ranges'!$I$52*24,0,'S2. Results'!$Z$8*24,1)
+  GT_TD                        -> S1. Inputs!$B$167
+  GenType                      -> S1. Inputs!$B$19
+  H2Stoic                      -> S1. Inputs!$B$16
+  H2Stor_Cap                   -> S1. Inputs!$B$26
+  H2Store_LevelVis             -> (formula) OFFSET('S5. Working Data'!$AM$19,'A2.Ranges'!$I$52*24,0,'S2. Results'!$Z$8*24,1)
+  H2_Storage_CAPEX             -> S3. Levelised Cost Analysis!$B$127
+  H2_Storage_OPEX              -> S3. Levelised Cost Analysis!$B$130
+  Hybrid_CAPEX                 -> S3. Levelised Cost Analysis!$B$46
+  Hybrid_OPEX                  -> S3. Levelised Cost Analysis!$B$48
+  Hydrogen_LHV                 -> A3. Conversion Factors!$B$9
+  LC_H2                        -> S3. Levelised Cost Analysis!$AE$129
+  LC_NH3                       -> S3. Levelised Cost Analysis!$AE$130
+  Location                     -> S1. Inputs!$B$4
+  MWconv_kW                    -> A3. Conversion Factors!$B$17
+  MinH2StorCap                 -> S1. Inputs!$B$65; S1. Inputs!$B$26
+  MinLoadNH3                   -> S1. Inputs!$B$33
+  N2_PowDem                    -> S1. Inputs!$B$15
+  NH3Cap                       -> A3. Conversion Factors!$B$27
+  NH3Max                       -> (formula) 0.99
+  NH3_Cap                      -> S1. Inputs!$B$12
+  NH3_PowDem                   -> S1. Inputs!$B$13
+  NH3_kTPA                     -> S3. Levelised Cost Analysis!$B$136
+  O_M_NH3                      -> S1. Inputs!$B$44
+  POWCF1                       -> S5. Working Data!$C$11
+  PP_CAPEX                     -> S3. Levelised Cost Analysis!$B$71
+  PP_Config                    -> S1. Inputs!$B$5
+  PP_OPEX                      -> S3. Levelised Cost Analysis!$B$73
+  Plant_Life                   -> S1. Inputs!$B$190
+  Pmax                         -> A3. Conversion Factors!$B$20
+  Pmin                         -> A3. Conversion Factors!$B$25
+  PowerPlant_CFVis             -> (formula) OFFSET('S5. Working Data'!$C$19,'A2.Ranges'!$I$52*24,0,'S2. Results'!$Z$8*24,1)
+  Power_Loss                   -> S1. Inputs!$B$124
+  Prated_ASU_HB                -> A3. Conversion Factors!$B$24
+  Prated_Elec                  -> A3. Conversion Factors!$B$22
+  Pstoic                       -> A3. Conversion Factors!$B$21
+  RECap                        -> S1. Inputs!$B$25
+  SECH2                        -> S1. Inputs!$B$55
+  SECN2                        -> S1. Inputs!$B$31
+  SECNH3                       -> S1. Inputs!$B$30
+  SECVsLoad                    -> S1. Inputs!$B$53
+  SolarCAPEX                   -> S3. Levelised Cost Analysis!$B$20
+  SolarCap                     -> S1. Inputs!$B$20
+  SolarDeg                     -> S1. Inputs!$B$88
+  SolarOPEX                    -> S3. Levelised Cost Analysis!$B$23
+  Stack_Lifetime               -> S1. Inputs!$B$61
+  TotNH3                       -> S5. Working Data!$AR$12
+  Tran_Dist                    -> S1. Inputs!$B$123
+  Transmission_Charges         -> S1. Inputs!$B$136
+  WindCap                      -> S1. Inputs!$B$21
+  WindDeg                      -> S1. Inputs!$B$89
+  Wind_CAPEX                   -> S3. Levelised Cost Analysis!$B$36
+  Wind_OPEX                    -> S3. Levelised Cost Analysis!$B$39
+  _xlchart.v1.3                -> [1]S5. Raw Data!$AW$10:$AW$8769
+  _xlchart.v1.4                -> [1]S5. Raw Data!$AX$10:$AX$8769
+  _xlchart.v1.5                -> [1]S5. Raw Data!$AZ$10:$AZ$8769
+  _xlchart.v1.6                -> [1]S5. Raw Data!$D$10:$D$8769
+  _xlchart.v1.7                -> [1]S5. Raw Data!$E$10:$E$8769
+  _xlchart.v1.8                -> [1]S5. Raw Data!$G$10:$G$8769
+  _xlchart.v5.0                -> S3. Levelised Cost Analysis!$E$130
+  _xlchart.v5.1                -> S3. Levelised Cost Analysis!$H$130:$AE$130
+  _xlchart.v5.2                -> S3. Levelised Cost Analysis!$H$131:$AE$131
+  a_1                          -> A1.Electrolyser Parameters!$F$21
+  b_1                          -> A1.Electrolyser Parameters!$F$22
+  c_1                          -> A1.Electrolyser Parameters!$F$23
+  elecCapacity                 -> S1. Inputs!$B$17
+  elecEff                      -> S1. Inputs!$B$54
+  elecMaxLoad                  -> S1. Inputs!$B$57
+  hydOutput                    -> S1. Inputs!$B$52
+
+================================================================================
+S3 LEFT BLOCK  (col A label | col B formula & value)  rows 6..156
+================================================================================
+  B6   | Parameter                                    | f='Value'  v='Value'
+  B7   | Power Plant                                  | f=None  v=None
+  B8   | Solar Farm                                   | f=None  v=None
+  B9   | Capacity                                     | f='=IF(GenType="Grid",0,SolarCap)'  v=3011.4077219059054
+  B10  | Reference Capacity                           | f="='S1. Inputs'!B94"  v=1000
+  B11  | Refrence Solar PV Farm Cost                  | f="='S1. Inputs'!B95"  v=557
+  B12  | Solar PV Cost Reduction with Scale           | f="='S1. Inputs'!B99"  v=0
+  B13  | Scale Index                                  | f="='S1. Inputs'!B98"  v=1
+  B14  | Reference Fold Increase                      | f="='S1. Inputs'!B100"  v=0
+  B15  | No. of fold increase in Capacity             | f='=IF(B14>0,IF(B9>0,LOG((B9*1000)/B10,B14),0),0)'  v=0
+  B16  | Capital Cost Reduction Factor                | f='=1-(1-B12)^B15'  v=0
+  B17  | Scaled Purchase Cost of Solar PV             | f='=IF(OR(GenType="Solar",GenType="Hybrid"),IF(\'S1. Inputs\'!B97="Self Defined",B11*(1-B16),(((B11*B10)*(B9*1000/B10)^B13))/(B9*1000)),0)'  v=557
+  B18  | Installation Cost                            | f="='S1. Inputs'!B102*($B$17*1000)"  v=55700
+  B19  | Land Procurement Cost                        | f="='S1. Inputs'!B103*('S3. Levelised Cost Analysis'!$B$17*'S3. Levelised Cost Analysis'!$B$9*1000)"  v=0
+  B20  | Solar Farm CAPEX                             | f='=(B17*B9*1000)'  v=1677354101.1015894
+  B21  | Solar Farm Indirect Costs                    | f='=B18+B19'  v=55700
+  B22  | Solar Farm O&M                               | f="='S1. Inputs'!B105"  v=12330
+  B23  | Solar Farm OPEX                              | f='=B9*B22'  v=37130657.21109981
+  B24  | Wind Farm                                    | f=None  v=None
+  B25  | Capacity                                     | f='=IF(GenType="Grid",0,WindCap)'  v=1551.3312506787995
+  B26  | Reference Capacity                           | f="='S1. Inputs'!B109"  v=1000
+  B27  | Reference Wind Farm Cost                     | f="='S1. Inputs'!B110"  v=1294
+  B28  | Scale Index                                  | f="='S1. Inputs'!B113"  v=1
+  B29  | Wind Cost Reduction with Scale               | f="='S1. Inputs'!B114"  v=0
+  B30  | Reference Fold Increase                      | f="='S1. Inputs'!B115"  v=0
+  B31  | No. of fold increase in Capacity             | f='=IF(B30>0,IF(B25>0,LOG((B25*1000)/B26,B30),0),0)'  v=0
+  B32  | Capital Cost Reduction Factor                | f='=1-(1-B29)^B31'  v=0
+  B33  | Scaled Purchase Cost of Wind                 | f='=IF(OR(GenType="Wind",GenType="Hybrid"),IF(\'S1. Inputs\'!B112="Self Defined",B27*(1-B29),(((B27*B26)*(B25*1000/B26)^B28))/(B25*1000)),0)'  v=1293.9999999999998
+  B34  | Installation Costs                           | f="='S1. Inputs'!B117*('S3. Levelised Cost Analysis'!$B$33*'S3. Levelised Cost Analysis'!$B$25*1000)"  v=200742263.83783662
+  B35  | Land Procurement                             | f="='S1. Inputs'!B118*('S3. Levelised Cost Analysis'!$B$33*'S3. Levelised Cost Analysis'!$B$25*1000)"  v=0
+  B36  | Wind Farm CAPEX                              | f='=(B33*B25*1000)'  v=2007422638.3783662
+  B37  | Wind Farm Indirect Costs                     | f='=B34+B35'  v=200742263.83783662
+  B38  | Wind Farm O&M                                | f="='S1. Inputs'!B120"  v=18140
+  B39  | Wind Farm OPEX                               | f='=B38*B25'  v=28141148.88731342
+  B40  | Hybrid System                                | f=None  v=None
+  B41  | Capacity                                     | f='=IF(GenType="Grid",0,RECap)'  v=4562.738972584705
+  B42  | % of Solar Farm                              | f='=IF(B41>0,B9/B41,0)'  v=0.66
+  B43  | % of Wind Farm                               | f='=IF(B41>0,B25/B41,0)'  v=0.33999999999999997
+  B44  | EPC                                          | f='=B18+B34'  v=200797963.83783662
+  B45  | Contingency                                  | f='=B19+B35'  v=0
+  B46  | Hybrid System CAPEX                          | f='=IF(GenType="Hybrid",B20+B36,0)'  v=3684776739.4799557
+  B47  | Hybrid System Indirect Costs                 | f='=B37+B21'  v=200797963.83783662
+  B48  | Hybrid System OPEX                           | f='=IF(GenType="Hybrid",B23+B39,0)'  v=65271806.09841323
+  B49  | Grid Connected System                        | f=None  v=None
+  B50  | Grid Connection Cost                         | f='=IF(OR(GenType="Grid",ISNUMBER(SEARCH("PPA",PP_Config)),ISNUMBER(SEARCH("Sold",B58))),\'S1. Inputs\'!B134,0)'  v=0
+  B51  | Grid Connection Capacity                     | f=(array) =_xlfn.IFS(PP_Config="C7. Grid Connected System",Pstoic,PP_Config="C4. Solar PPA",RECap,PP_Config="C5. Wind PPA",RECap,PP_Config="C6. Hybrid PPA",RECap,ISNUMBER(SEARCH("Sold",B58)),'S5. Working Data'!AU14,ISNUMBER(SEARCH("Curtailed",B58)),0)  v=0
+  B52  | Grid CAPEX                                   | f='=(B50*B51*1000)'  v=0
+  B53  | TUOS Fee                                     | f='=Transmission_Charges'  v=10
+  B54  | Cost of Electricity                          | f="='S1. Inputs'!B135"  v=50
+  B55  | PPA Cost                                     | f=None  v=None
+  B56  | Cost of Electricity Through PPA              | f="='S1. Inputs'!B140"  v=65
+  B57  | Excess Electricity                           | f=None  v=None
+  B58  | Excess Electrcity Strategy                   | f="='S1. Inputs'!B90"  v='Curtailed'
+  B59  | Average Spot Price for Electricity           | f='=IF(ISNUMBER(SEARCH("Sold",B58)),\'S1. Inputs\'!B142,0)'  v=0
+  B60  | Transmission Charges                         | f='=IF(ISNUMBER(SEARCH("Sold",B58)),\'S1. Inputs\'!B143,0)'  v=0
+  B61  | Transmission                                 | f=None  v=None
+  B62  | Transmission Distance                        | f='=Tran_Dist'  v=25
+  B63  | Transmission installation cost               | f="='S1. Inputs'!B126"  v=910000
+  B64  | Installation Costs                           | f="=($B$63*$B$62)*'S1. Inputs'!B127"  v=2275000
+  B65  | Land Procurement                             | f="=($B$63*$B$62)*'S1. Inputs'!B128"  v=0
+  B66  | Transmission CAPEX                           | f='=(B63*B62)'  v=22750000
+  B67  | Transmission Indirect Costs                  | f='=SUM(B64:B65)'  v=2275000
+  B68  | Transmisison Operating Costs                 | f="=(B63*B62)*'S1. Inputs'!B130"  v=227500
+  B69  | Transmission OPEX                            | f='=SUM(B68:B68)'  v=227500
+  B70  | Power Plant Summary                          | f=None  v=None
+  B71  | Power Plant CAPEX                            | f=(array) =_xlfn.IFS(PP_Config="C7. Grid Connected System",0,PP_Config="C1. Standalone Solar PV Generator",SolarCAPEX,PP_Config="C2. Standalone Wind Generator",Wind_CAPEX,PP_Config="C3. Standalone Hybrid Generator",Hybrid_CAPEX,PP_Config="C4. Solar PPA",0,PP_Config="C5. Wind PPA",0,PP_Config="C6. Hybrid PPA",0)  v=3684776739.4799557
+  B72  | Power Plant Indirect Costs                   | f=(array) =_xlfn.IFS(PP_CAPEX=0,0,GenType="Grid",0,GenType="Solar",B21,GenType="Wind",B37,GenType="Hybrid",B47)  v=200797963.83783662
+  B73  | Power Plant OPEX                             | f=(array) =_xlfn.IFS(PP_CAPEX=0,0,GenType="Grid",0,GenType="Solar",SolarOPEX,GenType="Wind",Wind_OPEX,GenType="Hybrid",Hybrid_OPEX)  v=65271806.09841323
+  B74  | Balancing Technology                         | f=None  v=None
+  B75  | Battery System                               | f=None  v=None
+  B76  | Capacity                                     | f='=IF(B_Tech="BT1. Battery",BattPower,0)'  v=500
+  B77  | Storage Duration                             | f='=IF(B_Tech="BT1. Battery",BattDuration,0)'  v=8
+  B78  | Total Capacity                               | f='=IF(B_Tech="BT1. Battery",BattCap,0)'  v=4000
+  B79  | Cost of Battery                              | f='=IF(B_Tech="BT1. Battery",\'S1. Inputs\'!B156,0)'  v=357
+  B80  | Installation Cost                            | f="=($B$79*$B$78*1000)*'S1. Inputs'!B157"  v=0
+  B81  | Land Procurement                             | f="=($B$79*$B$78*1000)*'S1. Inputs'!B158"  v=0
+  B82  | Battery CAPEX                                | f='=IF(B_Tech="BT1. Battery",(B78*B79*1000)+(B76*1000),0)'  v=1428500000
+  B83  | Battery Indirect Costs                       | f='=B80+B81'  v=0
+  B84  | Battery Operating Costs                      | f='=IF(B_Tech="BT1. Battery",\'S1. Inputs\'!B160,0)'  v=20000
+  B85  | Battery OPEX                                 | f='=IF(B_Tech="BT1. Battery",\'S3. Levelised Cost Analysis\'!B84*\'S3. Levelised Cost Analysis\'!B76,0)'  v=10000000
+  B86  | Battery Lifetime                             | f='=IF(B_Tech="BT1. Battery",\'S1. Inputs\'!B154,0)'  v=15
+  B87  | Battery replacement cost                     | f='=IF(B_Tech="BT1. Battery",\'S1. Inputs\'!B161,0)'  v=1
+  B88  |                                              | f='=IF(B_Tech="BT1. Battery",Battery_CAPEX,0)'  v=1428500000
+  B89  | Gas Turbines                                 | f=None  v=None
+  B90  | Capacity                                     | f='=GT_Cap'  v=84
+  B91  | Gas Turbine Cost                             | f='=IF(ISNUMBER(SEARCH("Gas turbine",B_Tech)),GT_Cost,0)'  v=0
+  B92  | Installation Cost                            | f="=(($B$90*1000)*$B$91)*'S1. Inputs'!B170"  v=0
+  B93  | Land Procurement                             | f="=(($B$90*1000)*$B$91)*'S1. Inputs'!B171"  v=0
+  B94  | Gas Turbine CAPEX                            | f='=B91*(B90*1000)'  v=0
+  B95  | Gas Turbine Indirect Costs                   | f='=SUM(B92:B93)'  v=0
+  B96  | Gas Turbine O&M                              | f="=B90*'S1. Inputs'!B173"  v=887.88
+  B97  | Gas Turbine Variable Costs                   | f="=('S5. Working Data'!W12)*'S1. Inputs'!B174"  v=0
+  B98  | Gas Turbine OPEX                             | f='=SUM(B96:B97)'  v=887.88
+  B99  | Grid Balanced System                         | f=None  v=None
+  B100 | Grid Connection Capacity                     | f='=IF(B_Tech="BT6. Grid Balanced System",\'S1. Inputs\'!B177,0)'  v=0
+  B101 | Grid Connection Cost                         | f='=IF(AND(B_Tech="BT6. Grid Balanced System",NOT(ISNUMBER(SEARCH("PPA",PP_Config)))),\'S1. Inputs\'!B179,0)'  v=0
+  B102 | Grid CAPEX                                   | f='=B100*1000*B101'  v=0
+  B103 | Grid System Charges                          | f='=IF(B_Tech="BT6. Grid Balanced System",\'S1. Inputs\'!B182,0)'  v=0
+  B104 | Cost of Electricity                          | f='=IF(B_Tech="BT6. Grid Balanced System",\'S1. Inputs\'!B181,0)'  v=0
+  B105 | Hydrogen Production & Storage Technology     | f=None  v=None
+  B106 | Electrolyser                                 | f=None  v=None
+  B107 | Electrolyser Capacity                        | f='=elecCapacity'  v=1832.726805286763
+  B108 | Reference Electrolyser Capacity              | f="='S1. Inputs'!B68"  v=1000
+  B109 | Refrence Electrolyser Cost                   | f="='S1. Inputs'!B69"  v=643
+  B110 | Scale Index                                  | f="='S1. Inputs'!B72"  v=0.99
+  B111 | Electrolyser Cost Reduction with Scale       | f="='S1. Inputs'!B74"  v=0.1
+  B112 | Reference Fold Increase                      | f="='S1. Inputs'!B75"  v=10
+  B113 | No. of fold increase in Capacity             | f='=IF(B112>0,LOG((B107*1000)/B108,B112),0)'  v=3.26309773184763
+  B114 | Capital Cost Reduction Factor                | f='=1-(1-B111)^B113'  v=0.290930448807333
+  B115 | Scaled Purchase Cost of Electrolyser         | f='=IF(\'S1. Inputs\'!B71="Self Defined",B109*(1-B114),(((B109*B108)*(B107*1000/B108)^B110))/(B107*1000))'  v=596.4581753375055
+  B116 | Installation Cost                            | f="='S1. Inputs'!B79*Elec_CAPEX"  v=109314488.61734784
+  B117 | Land Procurement Cost                        | f="='S1. Inputs'!B80*Elec_CAPEX"  v=0
+  B118 | Electrolyser CAPEX                           | f='=($B$115*$B$107*1000)'  v=1093144886.1734784
+  B119 | Electrolyser Indirect Costs                  | f='=SUM(B116:B117)'  v=109314488.61734784
+  B120 | Electrolyser O&M                             | f="='S1. Inputs'!B82"  v=0.025
+  B121 | Electrolyser Stack Replacement               | f="='S1. Inputs'!B84"  v=0.2
+  B122 |                                              | f='=B121*B118'  v=218628977.23469567
+  B123 | Electrolyser OPEX                            | f='=B120*B118'  v=27328622.15433696
+  B124 | H2 Storage                                   | f=None  v=None
+  B125 | H2 Storage Capacity                          | f='=H2Stor_Cap'  v=500000
+  B126 | H2 Storage Cost                              | f="='S1. Inputs'!B77"  v=459
+  B127 | H2 Storage CAPEX                             | f='=B125*B126'  v=229500000
+  B128 | H2 Storage Indirect Costs                    | f="='S1. Inputs'!B79*H2_Storage_CAPEX"  v=22950000
+  B129 | H2 Storage O&M                               | f="='S1. Inputs'!B83"  v=0.01
+  B130 | H2 Storage OPEX                              | f='=B129*B127'  v=2295000
+  B131 | Water Consumption                            | f=None  v=None
+  B132 | Water Requirement                            | f="='S1. Inputs'!B64"  v=10
+  B133 | Water Wholesale Cost                         | f="='S1. Inputs'!B85"  v=20
+  B134 | Ammonia Synthesis                            | f=None  v=None
+  B135 | Ammonia and ASU Plant                        | f=None  v=None
+  B136 | Ammonia Plant Capacity                       | f='=NH3Cap*8760/1000000'  v=1000
+  B137 | Ammonia Storage Capacity                     | f="='S1. Inputs'!B35*(NH3_kTPA/365*1000)"  v=82191.78082191781
+  B138 | ASU Plant Capacity                           | f="='S1. Inputs'!B14*365/1000"  v=823.0888505309966
+  B139 | Ammonia Plant Cost                           | f="='S1. Inputs'!B38"  v=378
+  B140 | Ammonia Storage Cost                         | f="='S1. Inputs'!B39"  v=82
+  B141 | ASU Plant Cost                               | f="='S1. Inputs'!B40"  v=182
+  B142 | Installation Cost                            | f="='S1. Inputs'!B41*(Ammonia_CAPEX+ASU_CAPEX)"  v=53454189.68240387
+  B143 | Land Procurement Cost                        | f="='S1. Inputs'!B42*(Ammonia_CAPEX+ASU_CAPEX)"  v=0
+  B144 | Ammonia Plant CAPEX                          | f='=(B136*1000*B139)+(B137*B140)'  v=384739726.0273973
+  B145 | ASU Plant CAPEX                              | f='=(B138*1000*B141)'  v=149802170.7966414
+  B146 | Ammonia and ASU Plant Indirects              | f='=B142+B143'  v=53454189.68240387
+  B147 | Ammonia Plant O&M                            | f='=O_M_NH3'  v=0.02
+  B148 | Ammonia Storage O&M                          | f="='S1. Inputs'!B45"  v=0.02
+  B149 | ASU Plant O&M                                | f="='S1. Inputs'!B46"  v=0.02
+  B150 | Ammonia Plant OPEX                           | f='=B147*(NH3_kTPA*1000*B139)'  v=7560000
+  B151 | Ammonia Storage OPEX                         | f='=B148*(B137*B140)'  v=134794.5205479452
+  B152 | ASU Plant OPEX                               | f='=B149*(B138*1000*B141)'  v=2996043.415932828
+  B153 | Additional Costs                             | f=None  v=None
+  B154 | Additional Upfront Costs                     | f="='S1. Inputs'!B186"  v=0
+  B155 | Additional Annual Costs                      | f="='S1. Inputs'!B187"  v=0
+
+================================================================================
+S3 ANNUAL PROFILE  cols D..R, rows 7..12 (headers + yr1,yr2) + row 43 (yr last)
+================================================================================
+
+-- row 7 --
+    E7: f='Year'  v='Year'
+    F7: f='RE Electricity Produced (MWh/Yr)'  v='RE Electricity Produced (MWh/Yr)'
+    G7: f='H2 Produced (TPA)'  v='H2 Produced (TPA)'
+    H7: f='N2 Produced (TPA)'  v='N2 Produced (TPA)'
+    I7: f='NH3 Produced (TPA)'  v='NH3 Produced (TPA)'
+    J7: f='Electricity Consumed (MWh/Yr)'  v='Electricity Consumed (MWh/Yr)'
+    K7: f='Grid Consumed (MWh/Yr)'  v='Grid Consumed (MWh/Yr)'
+    L7: f='Excess Electricity (MWh/Yr)'  v='Excess Electricity (MWh/Yr)'
+    M7: f='Electricity Consumed by Battery (MWh/Yr)'  v='Electricity Consumed by Battery (MWh/Yr)'
+    N7: f='Electrolyser Degradation (%)'  v='Electrolyser Degradation (%)'
+    O7: f='Actual Op. Hours (h/Yr)'  v='Actual Op. Hours (h/Yr)'
+    P7: f='Cum. Hours '  v='Cum. Hours '
+    Q7: f='Stack Life Consumed'  v='Stack Life Consumed'
+    R7: f='Battery Life Consumed'  v='Battery Life Consumed'
+
+-- row 8 --
+    E8: f='Plant Installation/Startup'  v='Plant Installation/Startup'
+    N8: f=0  v=0
+    Q8: f=0  v=0
+    R8: f='=IF(B_Tech="Battery",0,"")'  v=None
+
+-- row 9 --
+    E9: f=1  v=1
+    F9: f=14331605.224211443  v=14331605.224211443
+    G9: f=232352.63981889337  v=232352.63981889337
+    H9: f=820300.717761261  v=820300.717761261
+    I9: f=986698.7183589734  v=986698.7183589734
+    J9: f=12331620.15611168  v=12331620.15611168
+    K9: f=(array) =IF(E9="","",IF(OR(ISNUMBER(SEARCH("Grid",PP_Config)),ISNUMBER(SEARCH("Grid",B_Tech))),_xlfn.IFS(PP_Config="C7. Grid Connected System",'S5. Working Data'!$D$12,B_Tech="BT6. Grid Balanced System",'S5. Working Data'!$AB$12+'S5. Working Data'!$AC$12),0))  v=0
+    L9: f=757354.7346570254  v=757354.7346570254
+    M9: f="='S5. Working Data'!R12"  v=1242630.3334431483
+    N9: f='=IF(E9<=Plant_Life,IF(_xlfn.FLOOR.MATH(Q9)-_xlfn.FLOOR.MATH(Q8)=1,0,1-1/(1+Elec_DegRate)^(E9+1-_xlfn.XMATCH(0,$N$8:N8,0,-1))),"")'  v=0.00990099009900991
+    O9: f=8465  v=8465
+    P9: f='=IF(E9<=Plant_Life,P8+O9,"")'  v=8465
+    Q9: f='=IF(E9<=Plant_Life,P9/Stack_Lifetime,"")'  v=0.09958823529411764
+    R9: f=(array) =IF(E9<=Plant_Life,IF(B_Tech="BT1. Battery",_xlfn.IFS(E9<$B$86,E9/$B$86,(E9-$B$86)<$B$86,(E9-$B$86)/$B$86,(E9-2*$B$86)<$B$86,(E9-2*$B$86)/$B$86),""),"")  v=0.06666666666666667
+
+-- row 10 --
+    E10: f='=IF(MAX($E$9:E9)<Plant_Life,E9+1,"")'  v=2
+    F10: f=14317273.612417225  v=14317273.612417225
+    G10: f=229937.72136554786  v=229937.72136554786
+    H10: f=820227.3215779332  v=820227.3215779332
+    I10: f=986610.4337598578  v=986610.4337598578
+    J10: f=12325783.306932682  v=12325783.306932682
+    K10: f=(array) =IF(E10="","",IF(OR(ISNUMBER(SEARCH("Grid",PP_Config)),ISNUMBER(SEARCH("Grid",B_Tech))),_xlfn.IFS(PP_Config="C7. Grid Connected System",'S5. Working Data'!$D$12,B_Tech="BT6. Grid Balanced System",'S5. Working Data'!$AB$12+'S5. Working Data'!$AC$12),0))  v=0
+    L10: f=749581.3788791525  v=749581.3788791525
+    M10: f='=IF(E10="","",$M$9)'  v=1242630.3334431483
+    N10: f='=IF(E10<=Plant_Life,IF(_xlfn.FLOOR.MATH(Q10)-_xlfn.FLOOR.MATH(Q9)=1,0,1-1/(1+Elec_DegRate)^(E10+1-_xlfn.XMATCH(0,$N$8:N9,0,-1))),"")'  v=0.019703950593079167
+    O10: f=8465  v=8465
+    P10: f='=IF(E10<=Plant_Life,P9+O10,"")'  v=16930
+    Q10: f='=IF(E10<=Plant_Life,P10/Stack_Lifetime,"")'  v=0.1991764705882353
+    R10: f=(array) =IF(E10<=Plant_Life,IF(B_Tech="BT1. Battery",_xlfn.IFS(E10<$B$86,E10/$B$86,(E10-$B$86)<$B$86,(E10-$B$86)/$B$86,(E10-2*$B$86)<$B$86,(E10-2*$B$86)/$B$86),""),"")  v=0.13333333333333333
+
+-- row 11 --
+    E11: f='=IF(MAX($E$9:E10)<Plant_Life,E10+1,"")'  v=3
+    F11: f=14302956.332234928  v=14302956.332234928
+    G11: f=227547.84499120904  v=227547.84499120904
+    H11: f=819946.4860308403  v=819946.4860308403
+    I11: f=986272.6307220377  v=986272.6307220377
+    J11: f=12319946.426237825  v=12319946.426237825
+    K11: f=(array) =IF(E11="","",IF(OR(ISNUMBER(SEARCH("Grid",PP_Config)),ISNUMBER(SEARCH("Grid",B_Tech))),_xlfn.IFS(PP_Config="C7. Grid Connected System",'S5. Working Data'!$D$12,B_Tech="BT6. Grid Balanced System",'S5. Working Data'!$AB$12+'S5. Working Data'!$AC$12),0))  v=0
+    L11: f=741819.1932180144  v=741819.1932180144
+    M11: f='=IF(E11="","",$M$9)'  v=1242630.3334431483
+    N11: f='=IF(E11<=Plant_Life,IF(_xlfn.FLOOR.MATH(Q11)-_xlfn.FLOOR.MATH(Q10)=1,0,1-1/(1+Elec_DegRate)^(E11+1-_xlfn.XMATCH(0,$N$8:N10,0,-1))),"")'  v=0.02940985207235547
+    O11: f=8465  v=8465
+    P11: f='=IF(E11<=Plant_Life,P10+O11,"")'  v=25395
+    Q11: f='=IF(E11<=Plant_Life,P11/Stack_Lifetime,"")'  v=0.29876470588235293
+    R11: f=(array) =IF(E11<=Plant_Life,IF(B_Tech="BT1. Battery",_xlfn.IFS(E11<$B$86,E11/$B$86,(E11-$B$86)<$B$86,(E11-$B$86)/$B$86,(E11-2*$B$86)<$B$86,(E11-2*$B$86)/$B$86),""),"")  v=0.2
+
+-- row 12 --
+    E12: f='=IF(MAX($E$9:E11)<Plant_Life,E11+1,"")'  v=4
+    F12: f=14288653.369332548  v=14288653.369332548
+    G12: f=225182.6084026643  v=225182.6084026643
+    H12: f=819666.4587264624  v=819666.4587264624
+    I12: f=985935.7998789677  v=985935.7998789677
+    J12: f=12314102.06588382  v=12314102.06588382
+    K12: f=(array) =IF(E12="","",IF(OR(ISNUMBER(SEARCH("Grid",PP_Config)),ISNUMBER(SEARCH("Grid",B_Tech))),_xlfn.IFS(PP_Config="C7. Grid Connected System",'S5. Working Data'!$D$12,B_Tech="BT6. Grid Balanced System",'S5. Working Data'!$AB$12+'S5. Working Data'!$AC$12),0))  v=0
+    L12: f=734085.6143144408  v=734085.6143144408
+    M12: f='=IF(E12="","",$M$9)'  v=1242630.3334431483
+    N12: f='=IF(E12<=Plant_Life,IF(_xlfn.FLOOR.MATH(Q12)-_xlfn.FLOOR.MATH(Q11)=1,0,1-1/(1+Elec_DegRate)^(E12+1-_xlfn.XMATCH(0,$N$8:N11,0,-1))),"")'  v=0.03901965551718378
+    O12: f=8465  v=8465
+    P12: f='=IF(E12<=Plant_Life,P11+O12,"")'  v=33860
+    Q12: f='=IF(E12<=Plant_Life,P12/Stack_Lifetime,"")'  v=0.3983529411764706
+    R12: f=(array) =IF(E12<=Plant_Life,IF(B_Tech="BT1. Battery",_xlfn.IFS(E12<$B$86,E12/$B$86,(E12-$B$86)<$B$86,(E12-$B$86)/$B$86,(E12-2*$B$86)<$B$86,(E12-2*$B$86)/$B$86),""),"")  v=0.26666666666666666
+
+-- row 43 --
+    E43: f='=IF(MAX($E$9:E42)<Plant_Life,E42+1,"")'  v=None
+    K43: f=(array) =IF(E43="","",IF(OR(ISNUMBER(SEARCH("Grid",PP_Config)),ISNUMBER(SEARCH("Grid",B_Tech))),_xlfn.IFS(PP_Config="C7. Grid Connected System",'S5. Working Data'!$D$12,B_Tech="BT6. Grid Balanced System",'S5. Working Data'!$AB$12+'S5. Working Data'!$AC$12),0))  v=None
+    M43: f='=IF(E43="","",$M$9)'  v=None
+    N43: f='=IF(E43<=Plant_Life,IF(_xlfn.FLOOR.MATH(Q43)-_xlfn.FLOOR.MATH(Q42)=1,0,1-1/(1+Elec_DegRate)^(E43+1-_xlfn.XMATCH(0,$N$8:N42,0,-1))),"")'  v=None
+    P43: f='=IF(E43<=Plant_Life,P42+O43,"")'  v=None
+    Q43: f='=IF(E43<=Plant_Life,P43/Stack_Lifetime,"")'  v=None
+    R43: f=(array) =IF(E43<=Plant_Life,IF(B_Tech="BT1. Battery",_xlfn.IFS(E43<$B$86,E43/$B$86,(E43-$B$86)<$B$86,(E43-$B$86)/$B$86,(E43-2*$B$86)<$B$86,(E43-2*$B$86)/$B$86),""),"")  v=None

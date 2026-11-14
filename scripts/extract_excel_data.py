@@ -208,10 +208,13 @@ def extract_constants(wb) -> dict:
         "gw_to_mw":                {"value": cell(a3, "B16"), "unit": "MW/GW"},
         "mw_to_kw":                {"value": cell(a3, "B17"), "unit": "kW/MW"},
         "stoichiometry": {
-            "_note": "Parameterised for review. Masses per tonne of NH3 produced.",
+            "_note": "Molar basis per 34.181 units NH3 -> 6.047 H2 + 28.134 N2 (from S1 sizing "
+                     "formulas). Ratios computed from these, not rounded.",
             "nh3_molar_basis":  {"value": nh3_molar, "unit": "mass units"},
-            "h2_kg_per_t_nh3":  {"value": round(1000 * h2_molar / nh3_molar, 4), "unit": "kgH2/tNH3", "review": True},
-            "n2_kg_per_t_nh3":  {"value": round(1000 * n2_molar / nh3_molar, 4), "unit": "kgN2/tNH3", "review": True},
+            "h2_molar_basis":   {"value": h2_molar, "unit": "mass units", "review": True},
+            "n2_molar_basis":   {"value": n2_molar, "unit": "mass units", "review": True},
+            "h2_kg_per_t_nh3":  {"value": round(1000 * h2_molar / nh3_molar, 4), "unit": "kgH2/tNH3 (derived)"},
+            "n2_kg_per_t_nh3":  {"value": round(1000 * n2_molar / nh3_molar, 4), "unit": "kgN2/tNH3 (derived)"},
             "nh3_conversion_efficiency": {"value": 0.99, "unit": "fraction", "review": True},
         },
         "electrolyser_sec_fit": {

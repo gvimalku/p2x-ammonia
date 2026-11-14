@@ -6,13 +6,11 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parent.parent.parent
 
-
-def load_weather(weather_file: str | Path) -> tuple[np.ndarray, np.ndarray, pd.DataFrame]:
+def load_weather(weather_file: str | Path, base_dir: str | Path | None = None) -> tuple[np.ndarray, np.ndarray, pd.DataFrame]:
     path = Path(weather_file)
     if not path.is_absolute():
-        path = ROOT / path
+        path = (Path(base_dir) if base_dir else Path.cwd()) / path
     df = pd.read_parquet(path)
     solar = df["solar_cf"].astype("float64").to_numpy()
     wind = df["wind_cf"].astype("float64").to_numpy()

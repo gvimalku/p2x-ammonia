@@ -11,8 +11,6 @@ from typing import Any
 
 import yaml
 
-ROOT = Path(__file__).resolve().parent.parent.parent
-
 
 def _flatten_inputs(inputs: dict) -> dict[str, Any]:
     """Pull {section: {key: {value, unit}}} down to {key: value}."""
@@ -49,7 +47,9 @@ class Case:
 def load_case(config_path: str | Path) -> Case:
     config_path = Path(config_path)
     if not config_path.is_absolute():
-        config_path = ROOT / config_path
+        config_path = (Path.cwd() / config_path).resolve()
+    # project root = the directory that holds config/ and data/ (one above the config file)
+    project_root = config_path.parent.parent
     with config_path.open() as fh:
         cfg = yaml.safe_load(fh)
 
@@ -66,7 +66,8 @@ def load_case(config_path: str | Path) -> Case:
         constants=constants,
         weather_file=cfg.get("weather_file"),
         case_name=cfg.get("case_name", config_path.stem),
-        meta={"config_path": str(config_path), "review": cfg.get("_review_required")},
+        meta={"config_path": str(config_path), "review": cfg.get("_review_required"),
+              "description": cfg.get("description", ""), "project_root": str(project_root)},
     )
 
 

@@ -88,7 +88,7 @@ def simulate_year(
 
     traces: dict[str, np.ndarray] = {}
     if capture_hourly:
-        for name in ("C", "D", "AE", "AF", "AS", "V", "AM", "AU", "AD", "AN"):
+        for name in ("C", "D", "AE", "AF", "AS", "V", "AM", "AU", "AD", "AN", "R"):
             traces[name] = np.empty(n, dtype="float64")
 
     for h in range(n):
@@ -280,6 +280,7 @@ def simulate_year(
             traces["AU"][h] = AU
             traces["AD"][h] = AD
             traces["AN"][h] = AN
+            traces["R"][h] = R
 
         # advance state
         V_prev = V

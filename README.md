@@ -24,15 +24,29 @@ docs/      bug report, cost scope, assumptions-for-review
 outputs/   run artifacts (gitignored)
 ```
 
-## Quickstart (once built)
+## Quickstart
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
-pip install -e ".[dev]"
-python scripts/extract_excel_data.py          # workbook -> data/ + config/
-p2x-run config/default_fitzroy_hybrid.yaml     # -> outputs/report.html
-pytest                                         # parity + unit tests
+pip install .                                  # regular install (see note below)
+python scripts/extract_excel_data.py           # workbook -> data/ + config/ (first time only)
+p2x-run config/default_fitzroy_hybrid.yaml     # -> outputs/<case>/report.html + CSVs
+pytest                                         # parity + unit tests (45)
 ```
+
+Open `outputs/default_fitzroy_hybrid/report.html` in any browser for the full chart report.
+
+**Install note:** this project's `.venv` is built on an Anaconda base Python whose `site`
+does not reliably honour editable (`pip install -e .`) `.pth` files, so a regular
+`pip install .` is used. Re-run `pip install .` after changing the package code to refresh
+the installed console script. For fast iteration without reinstalling, run against `src/`
+directly:
+
+```bash
+PYTHONPATH=src python -m p2x_ammonia.cli config/default_fitzroy_hybrid.yaml
+```
+
+Tests already run against `src/` (configured in `pyproject.toml`), so `pytest` needs no reinstall.
 
 ## Source model
 

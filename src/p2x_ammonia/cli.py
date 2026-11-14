@@ -5,6 +5,7 @@ import argparse
 from pathlib import Path
 
 from .engine import run_from_config
+from .report import render_report
 from .results import build_summary, export
 
 
@@ -13,11 +14,15 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("config", help="Path to the case config YAML (e.g. config/default_fitzroy_hybrid.yaml)")
     parser.add_argument("--out", default=None, help="Output directory (default: outputs/<case_name>)")
     parser.add_argument("--reporting-year", type=int, default=1, help="Year to capture hourly traces for")
+    parser.add_argument("--no-report", action="store_true", help="Skip generating the HTML report")
     args = parser.parse_args(argv)
 
     res = run_from_config(args.config, reporting_year=args.reporting_year)
     out_dir = Path(args.out) if args.out else Path("outputs") / res.case.case_name
     export(res, out_dir)
+    report_path = None
+    if not args.no_report:
+        report_path = render_report(res, out_dir / "report.html")
     s = build_summary(res)
 
     print(f"\nCase: {s['case']}")
@@ -35,6 +40,8 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  Battery replacements (yrs) : {s['battery_replacement_years']}")
     print("=" * 52)
     print(f"  Results written to: {out_dir}/")
+    if report_path:
+        print(f"  HTML report       : {report_path}")
     return 0
 
 

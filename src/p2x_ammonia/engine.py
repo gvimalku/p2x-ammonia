@@ -98,5 +98,11 @@ def run_case(case: Case, solar_cf: np.ndarray, wind_cf: np.ndarray,
 
 def run_from_config(config_path: str | Path, reporting_year: int = 1) -> CaseResult:
     case = compute_sizing(load_case(config_path))
-    solar, wind, _ = load_weather(case.weather_file)
-    return run_case(case, solar, wind, reporting_year=reporting_year)
+    solar, wind, df = load_weather(case.weather_file, base_dir=case.meta.get("project_root"))
+    res = run_case(case, solar, wind, reporting_year=reporting_year)
+    # attach calendar info for seasonal/time-series charts (weather is the same each year)
+    if res.hourly is not None and "month" in df.columns:
+        res.hourly["month"] = df["month"].to_numpy()
+        res.hourly["hour_of_day"] = (df["datetime"].dt.hour.to_numpy()
+                                     if "datetime" in df.columns else None)
+    return res

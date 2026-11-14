@@ -1,0 +1,273 @@
+{
+  "_note": "Cached values from the workbook's last calculation. Parity targets for the Python port.",
+  "lcoa": {
+    "lc_h2_s3_AE129": 3.805146474835743,
+    "lc_nh3_s3_AE130": 0.8645128710576028,
+    "lc_h2_s2_F32": 3.805146474835743,
+    "lc_nh3_s2_F33": 0.8645128710576028
+  },
+  "s2_results_summary": [
+    {
+      "row": 17,
+      "label": "Key Results Summary",
+      "value": null
+    },
+    {
+      "row": 18,
+      "label": "Average Power Plant Capacity Factor",
+      "value": 0.35429291456296563
+    },
+    {
+      "row": 19,
+      "label": "Average Time Electrolyser is at Max Capacity ",
+      "value": 0.35609589041095885
+    },
+    {
+      "row": 20,
+      "label": "Average Total Time Electrolyser is Operating ",
+      "value": 8459.08
+    },
+    {
+      "row": 21,
+      "label": "Electrolyser Capacity Factor Achieved",
+      "value": 0.7264452048737314
+    },
+    {
+      "row": 22,
+      "label": "Energy Consumed by Electrolyser",
+      "value": 10608110.004956638
+    },
+    {
+      "row": 23,
+      "label": "Energy Consumed by Ammonia/ASU Plant",
+      "value": 596869.5444554688
+    },
+    {
+      "row": 24,
+      "label": "Energy Used to Charge Battery",
+      "value": 1242630.3334431483
+    },
+    {
+      "row": 25,
+      "label": "Time Ammonia Plant is at Max Capacity",
+      "value": 0.991447488584475
+    },
+    {
+      "row": 26,
+      "label": "Ammonia Plant Annual Capacity Factor Achieved",
+      "value": 0.9850663802647829
+    },
+    {
+      "row": 27,
+      "label": "Average Total Time Ammonia Plant is Operating",
+      "value": 8759
+    },
+    {
+      "row": 28,
+      "label": "Hydrogen Production",
+      "value": 223359.10933045603
+    },
+    {
+      "row": 29,
+      "label": "Nitrogen Production",
+      "value": 818943.6590305581
+    },
+    {
+      "row": 30,
+      "label": "Ammonia Production",
+      "value": 985066.3802647488
+    },
+    {
+      "row": 31,
+      "label": "Excess Power Generated (Curtailed or Sold to Grid)",
+      "value": 757354.7346570254
+    },
+    {
+      "row": 32,
+      "label": "Levelised Cost of Hydrogen",
+      "value": 3.805146474835743
+    },
+    {
+      "row": 33,
+      "label": "Levelised Cost of Ammonia",
+      "value": 0.8645128710576028
+    }
+  ],
+  "s3_annual_profile": [
+    {
+      "row": 9,
+      "total_energy_gen": 14331605.224211443,
+      "h2_tpa": 232352.63981889337,
+      "n2_tpa": 820300.717761261,
+      "nh3_tpa": 986698.7183589734
+    },
+    {
+      "row": 10,
+      "total_energy_gen": 14317273.612417225,
+      "h2_tpa": 229937.72136554786,
+      "n2_tpa": 820227.3215779332,
+      "nh3_tpa": 986610.4337598578
+    },
+    {
+      "row": 11,
+      "total_energy_gen": 14302956.332234928,
+      "h2_tpa": 227547.84499120904,
+      "n2_tpa": 819946.4860308403,
+      "nh3_tpa": 986272.6307220377
+    },
+    {
+      "row": 12,
+      "total_energy_gen": 14288653.369332548,
+      "h2_tpa": 225182.6084026643,
+      "n2_tpa": 819666.4587264624,
+      "nh3_tpa": 985935.7998789677
+    },
+    {
+      "row": 13,
+      "total_energy_gen": 14274364.709393244,
+      "h2_tpa": 222838.4751532155,
+      "n2_tpa": 819303.0088028014,
+      "nh3_tpa": 985498.6241382919
+    },
+    {
+      "row": 14,
+      "total_energy_gen": 14260090.33811389,
+      "h2_tpa": 220522.29910173305,
+      "n2_tpa": 818859.3230709634,
+      "nh3_tpa": 984964.9367557504
+    },
+    {
+      "row": 15,
+      "total_energy_gen": 14245830.241205804,
+      "h2_tpa": 218226.83491480254,
+      "n2_tpa": 818225.5373106693,
+      "nh3_tpa": 984202.5875539827
+    },
+    {
+      "row": 16,
+      "total_energy_gen": 14231584.404394612,
+      "h2_tpa": 215958.70811819495,
+      "n2_tpa": 817441.0133713149,
+      "nh3_tpa": 983258.92293353
+    },
+    {
+      "row": 17,
+      "total_energy_gen": 14217352.813420117,
+      "h2_tpa": 213714.14920906458,
+      "n2_tpa": 816729.7379453519,
+      "nh3_tpa": 982403.3652874106
+    },
+    {
+      "row": 18,
+      "total_energy_gen": 14203135.454036761,
+      "h2_tpa": 211492.88571241632,
+      "n2_tpa": 815901.1424336056,
+      "nh3_tpa": 981406.6891761081
+    },
+    {
+      "row": 19,
+      "total_energy_gen": 14188932.312012758,
+      "h2_tpa": 233499.7883263897,
+      "n2_tpa": 820264.683401677,
+      "nh3_tpa": 986655.3744295471
+    },
+    {
+      "row": 20,
+      "total_energy_gen": 14174743.373130675,
+      "h2_tpa": 231069.18721961678,
+      "n2_tpa": 820216.2200594821,
+      "nh3_tpa": 986597.0802983885
+    },
+    {
+      "row": 21,
+      "total_energy_gen": 14160568.623187495,
+      "h2_tpa": 228663.72561228406,
+      "n2_tpa": 820002.5242827188,
+      "nh3_tpa": 986340.0363333091
+    },
+    {
+      "row": 22,
+      "total_energy_gen": 14146408.047994366,
+      "h2_tpa": 226286.9663673414,
+      "n2_tpa": 819715.1480594077,
+      "nh3_tpa": 985994.3658430991
+    },
+    {
+      "row": 23,
+      "total_energy_gen": 14132261.63337634,
+      "h2_tpa": 223931.3824801812,
+      "n2_tpa": 819481.3168163381,
+      "nh3_tpa": 985713.1019323735
+    },
+    {
+      "row": 24,
+      "total_energy_gen": 14118129.365172999,
+      "h2_tpa": 221596.7648073163,
+      "n2_tpa": 819011.070118026,
+      "nh3_tpa": 985147.4656913099
+    },
+    {
+      "row": 25,
+      "total_energy_gen": 14104011.229237808,
+      "h2_tpa": 219290.00297469436,
+      "n2_tpa": 818510.0740363233,
+      "nh3_tpa": 984544.8425544339
+    },
+    {
+      "row": 26,
+      "total_energy_gen": 14089907.211438585,
+      "h2_tpa": 217007.07792559668,
+      "n2_tpa": 817810.0955000195,
+      "nh3_tpa": 983702.8733720416
+    },
+    {
+      "row": 27,
+      "total_energy_gen": 14075817.297657168,
+      "h2_tpa": 214747.58203558726,
+      "n2_tpa": 817034.314107014,
+      "nh3_tpa": 982769.7247234659
+    },
+    {
+      "row": 28,
+      "total_energy_gen": 14061741.473789474,
+      "h2_tpa": 212511.5403215382,
+      "n2_tpa": 816261.8064823216,
+      "nh3_tpa": 981840.5139271048
+    },
+    {
+      "row": 29,
+      "total_energy_gen": 14047679.725745734,
+      "h2_tpa": 232300.84138323198,
+      "n2_tpa": 820184.2641150727,
+      "nh3_tpa": 986558.6420906549
+    },
+    {
+      "row": 30,
+      "total_energy_gen": 14033632.0394499,
+      "h2_tpa": 229885.47249469816,
+      "n2_tpa": 820023.8870969523,
+      "nh3_tpa": 986365.7325944094
+    },
+    {
+      "row": 31,
+      "total_energy_gen": 14019598.400840491,
+      "h2_tpa": 227495.21380969224,
+      "n2_tpa": 819759.2396038066,
+      "nh3_tpa": 986047.4013572797
+    },
+    {
+      "row": 32,
+      "total_energy_gen": 14005578.795869663,
+      "h2_tpa": 225129.59304820202,
+      "n2_tpa": 819546.923062082,
+      "nh3_tpa": 985792.0164050672
+    },
+    {
+      "row": 33,
+      "total_energy_gen": 13991573.210503846,
+      "h2_tpa": 222788.42766728855,
+      "n2_tpa": 819169.1619915054,
+      "nh3_tpa": 985337.6265013246
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+row,A_label,B_value,C_unit,D_note,E_ref
+1,S1. Inputs Sheet,,,,
+3,Scope of Analysis,,,,
+4,Location,"Fitzroy, QLD",,Choose preloaded locations from the dropdown list or select custom to enter data for a user specified location,
+5,Power Plant Configuration,C3. Standalone Hybrid Generator,,Select the power plant configuration from the options in the list. The different power plant configurations that can be evaluated using the tool are detailed in the uder manual.,
+6,Balancing Technology,BT1. Battery,,Select the type of balancing power technology from the dropdown list. Further details on each balancing power technology option is documented in the user manual.,
+7,"Note: The choices provided for the power plant configuration are used to determine which input cells are marked as inactive below. The scope will also be summarised in the results, which the user can then print/copy ",,,,
+8,"Note: Once the scope and inputs are ready, please click the green calculate button to initiate the calculation. The calculation button needs to be clicked again to recalculate the result each time the location, power plant configuration, balancing technology parameters, system sizing parameters, type of electolyser, electrolyser performance, and solar/wind performance parameters are changed. The cost parameters can be changed without the need to recalculate via the green claculate button.",,,,
+10,Parameter,Value,Unit,Note,Default Value
+11,System Sizing,,,,
+12,Ammonia Plant Capacity,1000,kTPA,Ammonia plant annual capacity ,50 to 1000 kTPA recommended
+13,Ammonia Plant Power Demand,46.80365296803653,MW,Rated Power Demand for the Ammonia Plant,
+14,Air Separation Unit Capacity,2255.037946660265,TPD,Daily nitrogen output required to meet the demand of the ammonia plant capacity specified,
+15,Air Separation Unit Power Demand,21.61078032216087,MW,Rated power demand for the air separation unit,
+16,Hydrogen Output,484.6880807369952,TPD,Daily hydrogen output required to meet the demand of the ammonia plant capacity specified,
+17,Nominal Electrolyser Capacity,1832.726805286763,MW,Electrolyser capacity (including oversizing) ,
+18,Electrolyser System Oversizing,0.815,%,Electrolyser oversized against minimum capacity to satisfy the ammonia plant capacity. Oversizing is required if the hydrogen storage is to be used when renewable power generation is insufficient to generate enough hydrogen for the ammonia plant ,
+19,Generator Type,Hybrid,,Generator type based on selected configuration,
+20,Nominal Solar Farm Capacity,3011.4077219059054,MW,Rated capacity of solar farm,
+21,Nominal Wind Farm Capacity,1551.3312506787995,MW,Rated capacity of wind farm,
+22,Hybrid Generator Split,0.66,% Solar,% of power provided by the solar farm for a hybrid generator type,
+23,,0.33999999999999997,% Wind,% of power provided by the wind farm for a hybrid generator type,
+24,Renewable Energy Plant Oversizing,1.4,%,"Renewable energy plant oversized against the electrolyser, air separation unit and ammonia plant power demand",
+25,Total Nominal Power Plant Capacity,4562.738972584705,MW,Total rated capacity for selected generation type,
+26,Hydrogen Storage Capacity,500000,kg,Hydrogen storage capacity,
+28,Ammonia Plant Parameters,,,,
+29,Specific Energy Consumption - SEC,,,,
+30,Ammonia Plant SEC,0.41,kWhe/kgNH3,Power required to produce 1 kg of ammonia,"0.40 - 0.60 kWhe/kgNH3 
+DOI:10.1016/B978-0-12-820560-0.00003-5"
+31,Air Separation Unit SEC,0.23,kWhe/kgN2,Power required to produce 1 kg of nitrogen,"0.175 - 0.28 kWhe/kgN2 
+DOI:10.1016/j.jclepro.2020.121627"
+32,Ammonia Plant Load Range,,,,
+33,Ammonia Plant Minimum Turndown,0.33,%,Minimum capacity at which the ammonia plant can safely operate,Typically 50%
+34,Other Operational Factors,,,,
+35,Duration of Ammonia Storage,30,Days,Number of days worth of ammonia storage capacity as a function of the ammonia plant capacity specified above,"15 - 20 Days 
+DOI:10.1016/B978-0-12-820560-0.00005-9"
+36,Ammonia Plant Costs,,,,
+37,Capital Costs,,,,
+38,Ammonia Synthesis Unit Cost,378,A$/TNH3,Ammonia Synthesis unit cost per tonne of annual ammonia capacity,"A$750 - A$950/TNH3 (Haber-Bosch Synthesis)
+DOI:10.1016/j.apenergy.2020.116170"
+39,Ammonia Storage Cost,82,A$/TNH3,Ammonia storage cost per tonne of capacity,"A$840 - A$1,600/TNH3 (Refrigerated Storage)
+DOI:10.1016/B978-0-12-820560-0.00008-4"
+40,Air Separation Unit Cost,182,A$/TNH3,Air Separation Unit cost per tonne of annual nitrogen capacity,"A$75 - A$300/TNH3 (Cryogenic)
+DOI:10.1016/j.apenergy.2020.116170"
+41,Installation Costs,0.1,% of CAPEX,"Includes engineering, procurement and construction costs",Above default values include installation costs
+42,Land Procurement Costs,0,% of CAPEX,Costs incurred for procurement of land ,Project and location specific
+43,Operating Costs,,,,
+44,Ammonia Synthesis Unit O&M,0.02,% of CAPEX,Annual operation and maintenance costs for the ammonia synthesis unit,"2% of CAPEX
+ DOI:10.1016/B978-0-12-820560-0.00008-4"
+45,Ammonia Storage O&M,0.02,% of CAPEX,Annual operation and maintenance costs for the ammonia storage unit,"3% of CAPEX
+ DOI:10.1016/B978-0-12-820560-0.00008-4"
+46,Air Separation Unit O&M,0.02,% of CAPEX,Annual operation and maintenance costs for the air separation unit,"2 % of CAPEX
+ DOI:10.1016/B978-0-12-820560-0.00008-4"
+48,Electrolyser & Hydrogen Storage Parameters,,,,
+49,Electrolyser Type,PEM,,Select type of electrolyser to be installed from the dropdown list,
+50,Electrolyser Specific Consumption - SEC,,,,
+51,SEC At Nominal Load,50,kWhe/kgH2,Power demand to produce 1 kg of hydrogen,55 - 60 kWh/kg (Aurecon AEMO 2021 Parameters)
+52,,0.02,kgH2/kWhe,,
+53,SEC vs Load Profile,Fixed,,"Select ""Fixed"" for SEC to be independent of electrolyser load and variable for SEC to be a function of load (Refer to A1. Electrolyser Parameters)",Fixed
+54,SEC Correction Factor,1,%,The ratio of the energy converted in the stack to the energy provided to the electrolyser system. NOTE: If the SEC is provided for the total system please make this value 100%,1
+55,Total System SEC at Nominal Load,50,kWhe/kgH2,NOTE: Please do not change this value. It is calculated based on the above inputs,
+56,Electrolyser Load Range,,,,
+57,Electrolyser Maximum Load,1,%,Maximum capacity the electrolyser can operate at in normal operation (defined as a percentage of capacity),1
+58,Electrolyser Minimum Load,0.1,%,Minimum capacity the electrolyser can operate at in normal operation (defined as a percentage of capacity),"10% for PEM, 10% for AE (Aurecon AEMO 2021 Parameters)"
+59,Other Operational Factors,,,,
+60,Stack Replacement Type,Cumulative hours,,Type of stack replacement. Cumulative hours of operation or cumulative level of degradation. Select from drop down list,Cummulative Hours
+61,Stack Lifetime,85000,hrs,"Cumulative hours of operation before stack replacement is due. NOTE: Provide this only when ""Cumulative hours"" stack replacement type is selected above.","80,000 for PEM, 80,000 for AE 
+(Aurecon AEMO 2021 Parameters)"
+62,Stack Degradation,0.01,%/yr,Decrease in stack hydrogen output per year,1%/yr (Aurecon AEMO 2021 Parameters)
+63,Maximum Degradataion Before Replacement,0,%,"Maximum allowable degradation before stack must be replaced. NOTE: Provide this only when the ""Maximum degradation level"" stack replacement type is selected above",10-20%
+64,Water Requirement of Electrolyser,10,L/kg,Water consumed per kg of hydrogen produced - independent of load,"15 - 20 L/kg of Hydrogen Produced
+ (Aurecon AEMO 2021 Parameters)"
+65,Minimum Hydrogen Storage,0.1,%,Minimum capacity the hydrogen storage can be run down to to safely maintain operation,0.1
+66,Electrolyser Costs,,,,
+67,Electrolyser Capital Costs,,,,
+68,Reference Electrolyser Capacity,1000,kW,Reference should always be lower than the nominal capacity,1000
+69,Reference Electrolyser Purchase Cost,643,A$/kW,Unit cost at the reference capacity,"For AE: A$1,333 - 1,513/kW  
+For PEM: A$2,438 - 2,501/kW 
+(Gencost 2021 - 2022 Final Report)"
+70,Economies of Scale - Electrolyser Equipment Cost,,,,
+71,Economies of Scale Profile,Scale Index,,Chose between a scale index - where the cost is reduced based on scale index or self defined in which the % change in cost for every fold increase in capacity can be defined by user,
+72,Scale Index,0.99,,Scale Index Ecos of Scale profile uses the general scale index formula for captial cost assessment:,"For <5 MW: AE = 0.69 and PEM = 0.79
+
+For >5 MW for both systems n = 0.9
+
+(Literature Standard)"
+73,,,,https://evcvaluation.com/the-cost-to-capacity-method-and-scale-factors/,
+74,Electrolyser Cost Reduction with Scale,0.1,%,% Decrease in unit capital cost after every reference fold increase in capacity,
+75,Reference Fold Increase,10,,Minimum # of fold increase in electrolyser capacity for capital cost reduction due to the above economies of scale,
+76,Hydrogen Storage Capital Costs,,,,
+77,Hydrogen Storage Purchase Cost,459,A$/kg,Cost for hydrogen storage per kg of hydrogen stored,"A$750 - A$2000/kgH2 
+DOI:10.1016/j.ijhydene.2018.06.121"
+78,Indirect Cost  - Electrolyser Facility Development,,,,
+79,Installation Costs,0.1,% of CAPEX,"Includes engineering, procurement and construction costs ",Estimates from GenCost 2021 - 2022 Report already  include this cost
+80,Land Procurement Cost,0,% of CAPEX,Cost incurred to procure the land,8-10% of CAPEX  (Aurecon AEMO Parameters 2021)
+81,Electrolyser System Operating Costs,,,,
+82,Electrolyser O&M,0.025,%/year,Annual operation and maintenance cost for the electrolyser,3% of CAPEX (Aurecon AEMO Parameters 2021)
+83,Hydrogen Storage O&M,0.01,% of CAPEX,Annual operation and maintenance cost for the hydrogen storage system,"1% of CAPEX
+DOI:10.1016/j.ijhydene.2018.06.121"
+84,Electrolyser Stack Replacement Costs,0.2,%,% of Electrolyser Purchase Cost,0.4
+85,Water Cost,20,A$/kL,,"Current Wholesale Prices in Australia:
+
+- Fresh Water: A$1.1 - 3.4/kL (Avg: 2.5)
+- Recycled Water: A$1.1 - 2.1/kL (Avg: 1.6)
+- Desalinated Water: A$1 - 5/kL (Avg: 2.5)"
+87,Power Plant Parameters,,,,
+88,Solar Degradation,0.001,%/yr,Decrease in solar farm output per year,0.4%/yr (Aurecon AEMO Parameters 2021)
+89,Wind Degradation,0.001,%/yr,Decrease in wind farm output per year,0.1%/yr (Aurecon AEMO Parameters 2021)
+90,Excess Electricity ,Curtailed,,Select betweeen curtailing excess electricity or selling it back to the grid,
+91,Power Plant Costs,,,,
+92,Solar Farm Parameters,,,,
+93,Solar Capital Costs,,,,
+94,Reference Capacity of Solar Farm,1000,kW,,1000 kW
+95,Reference Solar PV Farm Cost,557,A$/kW,,"A$1,441/kW (Gencost 2021 - 2022 Final Report)"
+96,Economies of Scale Profile - Wind Farm Equipment Cost,,,,
+97,Economies of Scale Profile,Scale Index,,Chose between a scale index - where the cost is reduced based on scale index or self defined in which the % change in cost for every fold increase in capacity can be defined by user,
+98,Scale Index,1,,Scale Index Ecos of Scale profile uses the general scale index formula for captial cost assessment:,n = 0.9 (Literature Standard)
+99,Solar Farm Cost Reduction with Scale,0,%,,
+100,Reference Fold Increase,0,,Minimum # of fold increase in solar farm capacity for capital cost reduction due to the above economies of scale,
+101,Indirect Costs - Solar Farm Development ,,,,
+102,Installation Costs,0.1,% of CAPEX,,Estimates from GenCost 2021 - 2022 Report already  include this cost
+103,Land Procurement Cost,0,% of CAPEX,,10% of CAPEX  (Aurecon AEMO Parameters 2021)
+104,Solar Farm Operating Costs,,,,
+105,OPEX (Fixed & Variable O&M),12330,A$/MW/year,,"A$17,000 MW/yr (Aurecon AEMO Parameters 2021)"
+107,Wind Farm Parameters,,,,
+108,Wind Capital Costs,,,,
+109,Reference Capacity of Wind Farm,1000,kW,,1000 kW
+110,Reference Wind Farm Cost,1294,A$/kW,,"Onshore: A$1,700/kW  (Aurecon AEMO Parameters 2021)
+
+Offshore: A$4,330/kW  (Aurecon AEMO Parameters 2021)"
+111,Economies of Scale Profile - Wind Farm Equipment Cost,,,,
+112,Economies of Scale Profile,Scale Index,,,
+113,Scale Index,1,,,n = 0.9 (Literature Standard)
+114,Wind Farm Cost Reduction with Scale,0,%,,
+115,Reference Fold Increase,0,,,
+116,Indirect Costs - Wind Farm Development ,,,,
+117,Installation Costs,0.1,% of CAPEX,,Estimates from GenCost 2021 - 2022 Report already  include this cost
+118,Land Procurement Cost,0,% of CAPEX,,3% of CAPEX  (Aurecon AEMO Parameters 2021)
+119,Wind Operating Costs,,,,
+120,OPEX (Fixed & Variable O&M),18140,A$/MW/year,,"A$25,000 MW/yr (Aurecon AEMO Parameters 2021)"
+122,Transmission Parameters,,,,
+123,Transmission Distance,25,km,Distance between renewable energy plant and electrolyser/air separation and ammonia unit site,
+124,Losses,3e-05,%/km,Power losses along transmission line,"0.003%/km for HVDC and 0.04%/km for HVAC 
+DOI:10.1039/d1ee02582a"
+125,Transmission Capital Costs,,,,
+126,Transmission Equipment Cost,910000,A$/km,Cost per km of transmission line. Includes lines and supporting infrastructure,"A$0.86M to A$1.35M/km of overhead HVAC line
+A$1.3M to A$2.05M/km of overhead HVDC line 
+(AEMO Transmission Cost Database 2021)"
+127,Installation Cost,0.1,% of CAPEX,,Above cost includes installation costs
+128,Land Procurement Cost,0,% of CAPEX,,Above cost includes land procurement costs
+129,Transmission Operating Costs,,,,
+130,Annual Transmission Operating Costs,0.01,% of CAPEX,,1% of CAPEX (AEMO Transmission Cost Report 2021)
+132,Grid Connected Systems,,,,
+133,Costs for Grid Connected Systems,,,,
+134,Grid Connection Cost,132,A$/kW,Capital cost for transmission connection which includes between 5-10km of transmisison line,"A$103 - A$227/kW 
+(AEMO Transmission Cost Report 2021)"
+135,Cost of Electricity from the Grid,50,A$/MWh,Fixed price for electricity purchased from the Grid,
+136,Additional Transmission Charges,10,A$/MWh,"Any additional charges for using grid services, e.g. Transmission Use of System (TUOS) Charges",
+137,Power Purchase Agreement Price,,,,
+138,Principal PPA Cost,55,A$/MWh,Fixed price for electricity purchased through the PPA,
+139,Additional Transmission Charges,10,A$/MWh,"Any additional charges for using grid services, e.g. Transmission Use of System (TUOS) Charges",
+140,Total PPA Cost,65,A$/MWh,"Note: Please do not change, the value is automatically evaluated based on above inputs",
+141,Sale of Excess Electricity to the Grid,,,,
+142,Spot Price for Electricity Sold to the Grid,55,A$/MWh,Average Spot price for excess electricity sold back to the grid,
+143,Transmission Charges,10,A$/MWh,"Any additional charges for using grid services, e.g. Transmission Use of System (TUOS) Charges",
+145,Balancing Technology Parameters,,,,
+146,Type,Battery,,,
+147,Battery Parameters,,,,
+148,Battery Rated Power,500,MW,Rated power capacity of the battery. Sets a limit on how much the battery can charge/discharge on demand,
+149,Duration of Storage,8,hours,Number of hours that the battery takes to charge/discharge at its max power level,
+150,Nominal Battery Capacity,4000,MWh,Rated energy capacity of the battery (multiple of storage duration and battery power capacity(. Equals 0 if battery is not in the configuration,
+151,Round Trip Efficiency,0.85,%,Energy lost in a charge/discharge cycle,83-85% (Aurecon AEMO Parameters 2021)
+152,Minimum State of Charge,0,%,Ratio of max capacity,
+153,Maximum State of Charge,1,%,Ratio of max capacity,
+154,Battery Lifetime,15,years,Number of years before battery needs to be replaced,20 year (Aurecon AEMO Parameters 2021)
+155,Battery Capital Costs,,,,
+156,Cost of Battery,357,A$/kWh,,"1 Hr Storage = A$790/kWh
+2 Hr Storage = A$527/kWh
+4 Hr Storage = A$407/kWh
+8 Hr Storage = A$357/kWh
+(Gencost 2021 – 2022 Final Report)"
+157,Installation Costs,0,% of CAPEX,,Estimates from GenCost 2021 - 2022 Report already  include this cost
+158,Land Procurement Cost,0,% of CAPEX,,
+159,Battery Operating Costs,,,,
+160,Battery O&M (Fixed & Variable O&M),20000,A$/MW/year,,"1 Hr Storage = A$4,833/MW
+2 Hr Storage = A$9,717/MW
+4 Hr Storage = A$19,239/MW
+8 Hr Storage = A$39,314/MW
+
+(Aurecon AEMO 2021 Parameters)"
+161,Replacement Cost,1,% of CAPEX,,100% (Aurecon AEMO Parameters 2021)
+163,Gas Turbine Parameters,,,,
+164,Type,None,,,
+165,Capacity,84,MW,Gas Turbine capacity,"GE F Class H2 Turbines: 57 to 288 MW (OCGT); 84 MW to 889 MW (CCGT)
+GE B/E Class H2 Turbines: 45 to 147 MW (OCGT); 70 MW to 439 MW (CCGT)
+Mitsubishi NH3 Turbines: 41MW (OCGT) to 60 & 120 MW (CCGT)"
+166,Efficiency,0.569,%,Gas turbine efficiency (assumed to be independent of load),"GE F Class H2 Turbines: 36.8% to 38.7% (OCGT); 56.9 to 60.4 (CCGT)
+GE B/E Class H2 Turbines: 33.4% to  to 36.9% (OCGT);51.9% to 55.3% (CCGT)
+Mitsubishi NH3 Turbines: 36.2% (OCGT) to 80% (CCGT)"
+167,Turndown,0.2,%,Minimum operating capacity of the gas turbine,For CCGT: 20% to 45% based on GE H2 Gas Turbines
+168,Gas Turbine Capital Costs,,,,
+169,Cost of Gas Turbine,1188,A$/kW,,"A$1188/kW
+ (AEMO ISP 2021 Cost Assumptions for Hydrogen turbine)"
+170,Installation Cost,0,% of CAPEX,,Cost above includes installation cost
+171,Land Procurement Costs,0,% of CAPEX,,Project and location specific
+172,Gas Turbine Operating Costs,,,,
+173,Fixed Operating Costs,10.57,A$/MW/year,,"A$10.57/kW/year 
+ (AEMO ISP 2021 Cost Assumptions for Hydrogen turbine)"
+174,Variable Operating Costs,2.49,A$/MWh/year,,"A$2.49/MWh/year
+ (AEMO ISP 2021 Cost Assumptions for Hydrogen turbine)"
+176,Grid Balanced System,,,,
+177,Grid Connection Capacity,500,MW,Capacity of grid connection. Capacity cannot be greater than renewable energy plant capacity,
+178,Grid Capital Costs,,,,
+179,Grid Connection Cost,132,A$/kW,Capacity of grid connection. Includes 5-10km of transmission line.,"A$103 - A$227/kW 
+(AEMO Transmission Cost Report 2021)"
+180,Grid Operating Costs,,,,
+181,Cost of Electricity,55,A$/MWh,,
+182,Grid System Charges,10,A$/MWh,,
+185,Additional Costs,,,,
+186,Additional Upfront Costs,,A$,Any additional costs to include as a once off in the levelised cost calculation,
+187,Additional Annual Costs,,A$/year,Any additional costs to include as an annual expenditure in the levelised cost calculation ,
+189,Financing Parameters,,,,
+190,Plant Life,25,years,"Total plant life to evaluate, assuming power plant, electrolyser and ammonia plant have equal plant life",25 - 30 Years for Electrolysers/Solar and Wind (Aurecon AEMO 2020 Parameters)
+191,Discount Rate,0.07,% p.a.,Discount rate for the net present value analysis and levelised cost calculation,

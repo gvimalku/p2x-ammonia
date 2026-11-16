@@ -152,6 +152,37 @@ year-1 values.
 > LCOA wrong** (it can't evaluate all the Excel functions the model uses), so its displayed `AE129/AE130`
 > are not the real figures. The engine is validated against the true Excel values (3.8051 / 0.8645).
 
+## Deployment & sharing (Streamlit web app)
+
+The engine ships with a Streamlit UI (`app.py`) so non-technical users can run scenarios in a browser
+with no install. It's deployed on **Streamlit Community Cloud**:
+
+- **Live app:** https://p2x-ammonia-lgohesnpk45nu4zzeknsgq.streamlit.app/
+- **Access:** the app is behind a shared password. Enter it at the prompt to use the app; send testers
+  **the URL + the password** via a private channel.
+
+### How the pieces fit
+
+| Thing | Where it lives |
+|---|---|
+| App code (`app.py`) + the gate logic | this repo (public) |
+| The **password value** | Streamlit Cloud → app **Settings → Secrets**, key `app_password` — **never** in the repo (`.streamlit/secrets.toml` is gitignored) |
+| Hosting | Streamlit Community Cloud, deployed from `main` / `app.py` |
+
+### Common tasks
+
+- **Change the password:** Streamlit app → **Settings → Secrets** → edit `app_password` → save (the app reboots).
+- **Update the live app:** `git push` to `main` — Streamlit auto-redeploys. No manual step.
+- **Run the app locally:** `streamlit run app.py` (with no `app_password` secret set, the gate stays open for local dev).
+- **Add a tester:** just give them the URL + password (no accounts needed).
+
+### Privacy note
+
+The **repo is public** (code, weather data, and the MIT/UNSW workbook are all visible), but the **hosted
+app is password-gated**, so only people with the password can run it. The password protects the *hosted
+instance*, not the code. Making the code private too would require solving Streamlit's private-repo access
+(or a different host) — a later decision, not currently set up.
+
 ## Layout
 
 ```

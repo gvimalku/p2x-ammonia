@@ -1,0 +1,7 @@
+[theme]
+base = "light"
+primaryColor = "#2563eb"
+
+[server]
+# Keep uploads small; this app takes no file uploads.
+maxUploadSize = 5

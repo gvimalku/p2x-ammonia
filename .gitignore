@@ -27,3 +27,9 @@ outputs/
 
 # Keep the source workbook and extracted data tracked, but ignore scratch
 data/raw_extract/*.tmp
+
+# Excel/Numbers lock file (created while the workbook is open)
+~$*.xlsm
+
+# Streamlit app temp run configs (written + deleted per run; ignore stragglers)
+config/_tmp_*.yaml

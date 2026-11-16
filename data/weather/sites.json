@@ -1,0 +1,289 @@
+[
+  {
+    "label": "Ashburton, WA",
+    "slug": "ashburton",
+    "file": "data/weather/ashburton.parquet",
+    "annual_mean_solar_cf": 0.299078,
+    "annual_mean_wind_cf": 0.376642
+  },
+  {
+    "label": "Baines, NT",
+    "slug": "baines",
+    "file": "data/weather/baines.parquet",
+    "annual_mean_solar_cf": 0.260324,
+    "annual_mean_wind_cf": 0.33634
+  },
+  {
+    "label": "Barcaldine, QLD",
+    "slug": "barcaldine",
+    "file": "data/weather/barcaldine.parquet",
+    "annual_mean_solar_cf": 0.33708,
+    "annual_mean_wind_cf": 0.402224
+  },
+  {
+    "label": "Broken Hill, NSW",
+    "slug": "broken_hill",
+    "file": "data/weather/broken_hill.parquet",
+    "annual_mean_solar_cf": 0.3267,
+    "annual_mean_wind_cf": 0.364391
+  },
+  {
+    "label": "Central Highlands",
+    "slug": "central_highlands",
+    "file": "data/weather/central_highlands.parquet",
+    "annual_mean_solar_cf": 0.241119,
+    "annual_mean_wind_cf": 0.552992
+  },
+  {
+    "label": "Central North VIC",
+    "slug": "central_north_vic",
+    "file": "data/weather/central_north_vic.parquet",
+    "annual_mean_solar_cf": 0.275669,
+    "annual_mean_wind_cf": 0.329952
+  },
+  {
+    "label": "Central West NSW",
+    "slug": "central_west_nsw",
+    "file": "data/weather/central_west_nsw.parquet",
+    "annual_mean_solar_cf": 0.289094,
+    "annual_mean_wind_cf": 0.386761
+  },
+  {
+    "label": "Clean Energy Hub North QLD",
+    "slug": "clean_energy_hub_north_qld",
+    "file": "data/weather/clean_energy_hub_north_qld.parquet",
+    "annual_mean_solar_cf": 0.298036,
+    "annual_mean_wind_cf": 0.483175
+  },
+  {
+    "label": "Cooma Monaro, NSW",
+    "slug": "cooma_monaro",
+    "file": "data/weather/cooma_monaro.parquet",
+    "annual_mean_solar_cf": 0.268024,
+    "annual_mean_wind_cf": 0.383973
+  },
+  {
+    "label": "Darling Downs, QLD",
+    "slug": "darling_downs",
+    "file": "data/weather/darling_downs.parquet",
+    "annual_mean_solar_cf": 0.305333,
+    "annual_mean_wind_cf": 0.446438
+  },
+  {
+    "label": "Eastern Eyre Peninsula, SA",
+    "slug": "eastern_eyre_peninsula",
+    "file": "data/weather/eastern_eyre_peninsula.parquet",
+    "annual_mean_solar_cf": 0.275819,
+    "annual_mean_wind_cf": 0.386426
+  },
+  {
+    "label": "Far North QLD",
+    "slug": "far_north_qld",
+    "file": "data/weather/far_north_qld.parquet",
+    "annual_mean_solar_cf": 0.286057,
+    "annual_mean_wind_cf": 0.587647
+  },
+  {
+    "label": "Fitzroy, QLD",
+    "slug": "fitzroy",
+    "file": "data/weather/fitzroy.parquet",
+    "annual_mean_solar_cf": 0.313894,
+    "annual_mean_wind_cf": 0.445273
+  },
+  {
+    "label": "Geraldton, WA",
+    "slug": "geraldton",
+    "file": "data/weather/geraldton.parquet",
+    "annual_mean_solar_cf": 0.305804,
+    "annual_mean_wind_cf": 0.483996
+  },
+  {
+    "label": "Gippsland, VIC",
+    "slug": "gippsland",
+    "file": "data/weather/gippsland.parquet",
+    "annual_mean_solar_cf": 0.235055,
+    "annual_mean_wind_cf": 0.303741
+  },
+  {
+    "label": "Isaac, QLD",
+    "slug": "isaac",
+    "file": "data/weather/isaac.parquet",
+    "annual_mean_solar_cf": 0.302799,
+    "annual_mean_wind_cf": 0.434072
+  },
+  {
+    "label": "Leigh Creek, SA",
+    "slug": "leigh_creek",
+    "file": "data/weather/leigh_creek.parquet",
+    "annual_mean_solar_cf": 0.329087,
+    "annual_mean_wind_cf": 0.423789
+  },
+  {
+    "label": "McArthur, NT",
+    "slug": "mcarthur",
+    "file": "data/weather/mcarthur.parquet",
+    "annual_mean_solar_cf": 0.289326,
+    "annual_mean_wind_cf": 0.3986
+  },
+  {
+    "label": "Mid North SA",
+    "slug": "mid_north_sa",
+    "file": "data/weather/mid_north_sa.parquet",
+    "annual_mean_solar_cf": 0.279456,
+    "annual_mean_wind_cf": 0.401056
+  },
+  {
+    "label": "Murray River, VIC",
+    "slug": "murray_river",
+    "file": "data/weather/murray_river.parquet",
+    "annual_mean_solar_cf": 0.299782,
+    "annual_mean_wind_cf": 0.318114
+  },
+  {
+    "label": "New England",
+    "slug": "new_england",
+    "file": "data/weather/new_england.parquet",
+    "annual_mean_solar_cf": 0.299356,
+    "annual_mean_wind_cf": 0.376764
+  },
+  {
+    "label": "North East Tasmania",
+    "slug": "north_east_tasmania",
+    "file": "data/weather/north_east_tasmania.parquet",
+    "annual_mean_solar_cf": 0.252632,
+    "annual_mean_wind_cf": 0.439584
+  },
+  {
+    "label": "North West NSW",
+    "slug": "north_west_nsw",
+    "file": "data/weather/north_west_nsw.parquet",
+    "annual_mean_solar_cf": 0.327176,
+    "annual_mean_wind_cf": 0.308592
+  },
+  {
+    "label": "North West Tasmania",
+    "slug": "north_west_tasmania",
+    "file": "data/weather/north_west_tasmania.parquet",
+    "annual_mean_solar_cf": 0.220008,
+    "annual_mean_wind_cf": 0.46334
+  },
+  {
+    "label": "Northern QLD",
+    "slug": "northern_qld",
+    "file": "data/weather/northern_qld.parquet",
+    "annual_mean_solar_cf": 0.298785,
+    "annual_mean_wind_cf": 0.430257
+  },
+  {
+    "label": "Northern SA",
+    "slug": "northern_sa",
+    "file": "data/weather/northern_sa.parquet",
+    "annual_mean_solar_cf": 0.300403,
+    "annual_mean_wind_cf": 0.394876
+  },
+  {
+    "label": "Ovens Murray, VIC",
+    "slug": "ovens_murray",
+    "file": "data/weather/ovens_murray.parquet",
+    "annual_mean_solar_cf": 0.248997,
+    "annual_mean_wind_cf": 0.41435
+  },
+  {
+    "label": "Port Hedland, WA",
+    "slug": "port_hedland",
+    "file": "data/weather/port_hedland.parquet",
+    "annual_mean_solar_cf": 0.296604,
+    "annual_mean_wind_cf": 0.354613
+  },
+  {
+    "label": "Riverland, SA",
+    "slug": "riverland",
+    "file": "data/weather/riverland.parquet",
+    "annual_mean_solar_cf": 0.300374,
+    "annual_mean_wind_cf": 0.305447
+  },
+  {
+    "label": "Roxby Downs SA",
+    "slug": "roxby_downs_sa",
+    "file": "data/weather/roxby_downs_sa.parquet",
+    "annual_mean_solar_cf": 0.329521,
+    "annual_mean_wind_cf": 0.350149
+  },
+  {
+    "label": "South East, SA",
+    "slug": "south_east",
+    "file": "data/weather/south_east.parquet",
+    "annual_mean_solar_cf": 0.23561,
+    "annual_mean_wind_cf": 0.401925
+  },
+  {
+    "label": "South West NSW",
+    "slug": "south_west_nsw",
+    "file": "data/weather/south_west_nsw.parquet",
+    "annual_mean_solar_cf": 0.300834,
+    "annual_mean_wind_cf": 0.321091
+  },
+  {
+    "label": "South West VIC",
+    "slug": "south_west_vic",
+    "file": "data/weather/south_west_vic.parquet",
+    "annual_mean_solar_cf": 0.235871,
+    "annual_mean_wind_cf": 0.383778
+  },
+  {
+    "label": "Southern NSW Tablelands",
+    "slug": "southern_nsw_tablelands",
+    "file": "data/weather/southern_nsw_tablelands.parquet",
+    "annual_mean_solar_cf": 0.269362,
+    "annual_mean_wind_cf": 0.413664
+  },
+  {
+    "label": "Tennant Creek, NT",
+    "slug": "tennant_creek",
+    "file": "data/weather/tennant_creek.parquet",
+    "annual_mean_solar_cf": 0.319637,
+    "annual_mean_wind_cf": 0.538324
+  },
+  {
+    "label": "Tumut, NSW",
+    "slug": "tumut",
+    "file": "data/weather/tumut.parquet",
+    "annual_mean_solar_cf": 0.257937,
+    "annual_mean_wind_cf": 0.422305
+  },
+  {
+    "label": "Wagga Wagga, NSW",
+    "slug": "wagga_wagga",
+    "file": "data/weather/wagga_wagga.parquet",
+    "annual_mean_solar_cf": 0.283603,
+    "annual_mean_wind_cf": 0.285333
+  },
+  {
+    "label": "Western Eyre Peninsula, SA",
+    "slug": "western_eyre_peninsula",
+    "file": "data/weather/western_eyre_peninsula.parquet",
+    "annual_mean_solar_cf": 0.295834,
+    "annual_mean_wind_cf": 0.382604
+  },
+  {
+    "label": "Western VIC",
+    "slug": "western_vic",
+    "file": "data/weather/western_vic.parquet",
+    "annual_mean_solar_cf": 0.260185,
+    "annual_mean_wind_cf": 0.411358
+  },
+  {
+    "label": "Wide Bay, QLD",
+    "slug": "wide_bay",
+    "file": "data/weather/wide_bay.parquet",
+    "annual_mean_solar_cf": 0.296382,
+    "annual_mean_wind_cf": 0.366521
+  },
+  {
+    "label": "Yorke Peninsula SA",
+    "slug": "yorke_peninsula_sa",
+    "file": "data/weather/yorke_peninsula_sa.parquet",
+    "annual_mean_solar_cf": 0.279496,
+    "annual_mean_wind_cf": 0.384637
+  }
+]

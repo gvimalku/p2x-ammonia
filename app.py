@@ -37,6 +37,37 @@ SITES_FILE = ROOT / "data" / "weather" / "sites.json"
 st.set_page_config(page_title="P2X Green-Ammonia Model", page_icon="⚡", layout="wide")
 
 
+# --------------------------------------------------------------------- access gate
+def check_password() -> bool:
+    """Gate the app behind a shared password stored in Streamlit secrets.
+
+    The password lives in Streamlit Cloud's Secrets (key `app_password`), never in
+    this repo. If no secret is configured (e.g. local dev), the app is open.
+    """
+    try:
+        correct = st.secrets["app_password"]
+    except Exception:
+        correct = None
+    if not correct:                         # no password configured -> open (local dev)
+        return True
+    if st.session_state.get("auth_ok"):
+        return True
+    st.title("⚡ P2X Green-Ammonia Model")
+    st.caption("This app is private. Enter the access password to continue.")
+    pw = st.text_input("Access password", type="password")
+    if pw:
+        if pw == str(correct):
+            st.session_state["auth_ok"] = True
+            st.rerun()
+        else:
+            st.error("Incorrect password.")
+    return False
+
+
+if not check_password():
+    st.stop()
+
+
 # ----------------------------------------------------------------------------- data
 @st.cache_data
 def load_baseline() -> dict:

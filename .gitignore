@@ -33,3 +33,6 @@ data/raw_extract/*.tmp
 
 # Streamlit app temp run configs (written + deleted per run; ignore stragglers)
 config/_tmp_*.yaml
+
+# Streamlit secrets (password etc.) — NEVER commit (set these in Streamlit Cloud UI)
+.streamlit/secrets.toml

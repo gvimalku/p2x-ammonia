@@ -83,6 +83,96 @@ def bval(cfg: dict, section: str, key: str):
     return cfg["inputs"][section][key]["value"]
 
 
+# --- Advanced inputs: expose every remaining NUMERIC engine input ----------------
+# The primary sidebar widgets already own these (skip them in Advanced):
+PRIMARY_KEYS = {
+    ("sizing", "nh3_capacity_ktpa"),
+    ("sizing", "hybrid_split_solar"),
+    ("sizing", "re_oversizing"),
+    ("sizing", "electrolyser_oversizing"),
+    ("electrolyser", "sec_nominal_kwh_per_kg"),
+    ("battery", "battery_power_mw"),
+    ("battery", "battery_duration_h"),
+    ("financing", "discount_rate"),
+    ("financing", "plant_life_years"),
+}
+
+# Categorical / topology inputs are held fixed — the engine only supports the
+# validated hybrid+battery case (see README "Limit (v1)"). Never expose these.
+FIXED_CATEGORICAL = {
+    ("scope", "location"),
+    ("scope", "power_plant_config"),
+    ("scope", "balancing_technology"),
+    ("electrolyser", "electrolyser_type"),
+    ("electrolyser", "sec_vs_load"),
+    ("electrolyser", "stack_replacement_type"),
+    ("electrolyser", "elec_scale_type"),
+    ("power_plant", "excess_electricity"),
+}
+
+# Sections shown in Advanced, in order, with friendly titles. (scope + financing
+# are omitted: their inputs are all either primary or categorical.)
+ADV_SECTIONS = [
+    ("sizing", "Sizing"),
+    ("ammonia_plant", "Ammonia plant"),
+    ("electrolyser", "Electrolyser"),
+    ("power_plant", "Power plant"),
+    ("transmission", "Transmission"),
+    ("battery", "Battery"),
+]
+
+
+def _adv_step(v: float) -> float:
+    """A sensible +/- step for a number_input given the value's magnitude."""
+    a = abs(float(v))
+    if a < 0.01:
+        return 0.001
+    if a < 1:
+        return 0.01
+    if a < 1000:
+        return 1.0
+    return 10.0
+
+
+def render_advanced_inputs(base: dict) -> dict:
+    """Auto-render every remaining NUMERIC input, grouped by section.
+
+    Skips the primary knobs and all categorical/topology inputs. Every field
+    defaults to its baseline value and is rendered as a float (the engine casts
+    to int where it needs one, e.g. engine.py's int(battery_lifetime_yr)), so an
+    untouched Advanced panel reproduces the current result exactly.
+    Returns {(section, key): value}. No nested expanders (Streamlit forbids them)
+    — categories are separated by bold headers inside one outer expander.
+    """
+    adv: dict = {}
+    for section, title in ADV_SECTIONS:
+        sec_cfg = base["inputs"].get(section, {})
+        fields = [
+            k for k, spec in sec_cfg.items()
+            if isinstance(spec, dict) and "value" in spec
+            and (section, k) not in PRIMARY_KEYS
+            and (section, k) not in FIXED_CATEGORICAL
+            and isinstance(spec["value"], (int, float))
+            and not isinstance(spec["value"], bool)
+        ]
+        if not fields:
+            continue
+        st.markdown(f"**{title}**")
+        for k in fields:
+            spec = sec_cfg[k]
+            v = float(spec["value"])
+            unit = spec.get("unit", "")
+            note = spec.get("note", "")
+            label = k.replace("_", " ")
+            if unit:
+                label = f"{label}  ({unit})"
+            adv[(section, k)] = st.number_input(
+                label, value=v, step=_adv_step(v), format="%g",
+                key=f"adv_{section}_{k}", help=note or None,
+            )
+    return adv
+
+
 def run_case(overrides: dict, site: dict) -> "object":
     """Write a temp config (sibling of constants.yaml) + run the engine. No engine changes."""
     cfg = copy.deepcopy(load_baseline())
@@ -147,6 +237,15 @@ with st.sidebar:
     plant_life = st.number_input("Plant life (years)", 1, 40,
                                  int(bval(base, "financing", "plant_life_years")), step=1)
 
+    st.divider()
+    with st.expander("⚙️ Advanced settings", expanded=False):
+        st.caption(
+            "Every other engine input, defaulted to the validated Fitzroy baseline — "
+            "untouched, results are unchanged. Held fixed (engine supports the "
+            "hybrid+battery case only): PEM · Fixed SEC · Standalone Hybrid · Battery."
+        )
+        adv_overrides = render_advanced_inputs(base)
+
     run_clicked = st.button("Run simulation", type="primary", use_container_width=True)
 
 overrides = {
@@ -160,6 +259,7 @@ overrides = {
     ("financing", "discount_rate"): discount_pct / 100.0,
     ("financing", "plant_life_years"): int(plant_life),
 }
+overrides.update(adv_overrides)   # advanced skips PRIMARY keys, so no conflicts
 
 if not run_clicked:
     st.info("Set your inputs in the sidebar and click **Run simulation**. "
